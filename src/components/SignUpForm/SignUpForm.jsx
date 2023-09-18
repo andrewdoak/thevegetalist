@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { signUp } from "../../utilities/users-service";
 
 export default class SignUpForm extends Component {
   // Initialize state here in the component
@@ -23,9 +24,23 @@ export default class SignUpForm extends Component {
   };
 
   // handleSubmit also defined in the component
-  handleSubmit = (evt) => {
+  handleSubmit = async (evt) => {
     evt.preventDefault();
-    alert(JSON.stringify(this.state));
+    // alert(JSON.stringify(this.state));
+    // We don't want to send the 'error' or 'confirm' property,
+    // SPREAD/COPY CURRENT STATE, then delete ONE
+    const formData = { ...this.state };
+    delete formData.error;
+    delete formData.confirm;
+
+    // CREATE USER (resolves JWT payload, promise returned by signUp svc method)
+    // SETS USER STATE WHEN LOGGED IN (displays NewOrders/History Routes)
+    const user = await signUp(formData);
+    console.log(user);
+    try {
+    } catch (error) {}
+    // with functional component, you need to use a spread operator before the
+    this.setState({ error: `We couldn't sign you up! Try again.` });
   };
 
   // setState is also defined in the component
@@ -73,6 +88,7 @@ export default class SignUpForm extends Component {
             </button>
           </form>
         </div>
+        {/* ERRORS DISPLAY IN A p tag */}
         <p className="error-message">&nbsp;{this.state.error}</p>
       </div>
     );

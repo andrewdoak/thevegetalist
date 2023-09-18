@@ -33,7 +33,6 @@ app.use(express.json());
 // Serves from build (or dist in our case) folder
 // __dirname is a reserved variable
 app.use(express.static(path.join(__dirname, "dist")));
-
 // Don't need urlencoded() method for form submission
 // Because AJAX will be handling, not Express
 
@@ -41,6 +40,9 @@ app.use(express.static(path.join(__dirname, "dist")));
 // API ROUTES
 // Put API routes here, before the "catch all" route
 ///////////////////
+// USER ROUTER
+const userRouter = require("./routes/api/users.cjs");
+app.use("/api/users", userRouter);
 
 // CATCH ALL
 // The following "catch all" route (note the *) is necessary

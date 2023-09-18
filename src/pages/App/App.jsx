@@ -41,14 +41,28 @@ export default function App() {
 // SLIDES:
 // https://ps-rtt-sei.herokuapp.com/15-week/mod-3/week-13/day-3/slides/
 // https://ps-rtt-sei.herokuapp.com/15-week/mod-3/week-14/day-1/slides/
+// https://ps-rtt-sei.herokuapp.com/15-week/mod-3/week-14/day-2/slides/
 // REMEMBER, ANYTHING CREATE REACT APP, WE'RE DOING VITE
 // SLIDES WON'T MATCH (NOTES BELOW AND IN SERVER.CJS)
 
 // CODE ALONG:
+// DAY 1
 // https://pscohorts.slack.com/archives/C056A692JAX/p1694545078282019?thread_ts=1694545069.253979&cid=C056A692JAX
+// DAY 2
+// DAY 3
+// DAY 4
+// https://app.slack.com/client/T04411PBUN8/C056A692JAX/thread/C056A692JAX-1695052776.226929
 
 // GITHUB REPO:
 // https://github.com/andrewdoak/sei-mern-cafe
+
+// DAY 4
+// =============
+// Putting AJAX request for login into a service module (not the SignUp form)
+// Service module is anything that is not not an AJAX call but not a view
+// We'll use it to make a token (maybe a util). Will call a try catch function. Then the Component will call that function.
+// Of course, we'll have to import it.
+// The point: separation of concerns.
 
 // DAY 3
 // =============
