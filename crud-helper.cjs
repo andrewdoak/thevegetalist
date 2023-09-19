@@ -15,3 +15,14 @@ let users, items, categories, orders;
 setTimeout(() => {
   db.close();
 }, 5000);
+
+/* 
+JOSH USED THIS WHEN WE CREATED THE BCRYPT IN users/model
+Commented out setTimeout
+
+To use it. A new terminal.
+type node
+then .load crud-helper.cjs
+
+FOLLOW NOTES at "Feel free sit back and observe..."
+*/

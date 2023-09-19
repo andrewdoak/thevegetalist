@@ -26,7 +26,7 @@ https://app.slack.com/client/T04411PBUN8/C056A692JAX/thread/C056A692JAX-16950527
 // =============
 Handles request of login from Sign Up Form
 
-// DAY 4
+// DAY 4"
 // =============
 // Putting AJAX request for login into a service module (not the SignUp form)
 // Service module is anything that is not not an AJAX call but not a view

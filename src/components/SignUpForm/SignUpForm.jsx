@@ -41,6 +41,8 @@ export default class SignUpForm extends Component {
     } catch (error) {}
     // with functional component, you need to use a spread operator before the
     this.setState({ error: `We couldn't sign you up! Try again.` });
+    // GOOD TO ALWAYS PUT A CLG IN CATCH BLOCKS
+    // console.log(err);
   };
 
   // setState is also defined in the component
@@ -48,8 +50,8 @@ export default class SignUpForm extends Component {
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (
-      <div className="form-container">
-        <div>
+      <div>
+        <div className="form-container">
           <form autoComplete="off" onSubmit={this.handleSubmit}>
             <label>Name</label>
             <input

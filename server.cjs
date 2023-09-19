@@ -62,7 +62,7 @@ const PORT = process.env.PORT || 3001;
 
 // LISTENING PORT
 app.listen(PORT, function () {
-  console.log(`Express is up and running on port ${PORT}`);
+  console.log(`Express Server up and running on -P ${PORT}`);
 });
 
 /* 
@@ -78,6 +78,9 @@ https://pscohorts.slack.com/archives/C056A692JAX/p1694703713453679
 
 CODE ALONG 3:
 https://pscohorts.slack.com/archives/C056A692JAX/p1694795108467469
+
+CODE ALONG 5: 
+https://pscohorts.slack.com/archives/C056A692JAX/p1695136396082119
 
 // DAY 3
 // =============

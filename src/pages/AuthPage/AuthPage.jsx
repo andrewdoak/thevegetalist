@@ -3,7 +3,7 @@ import SignUpForm from "../../components/SignUpForm/SignUpForm";
 function AuthPage() {
   return (
     <main>
-      <h1>Authorization Page</h1>
+      <h1>Sign Up</h1>
       <SignUpForm />
     </main>
   );
