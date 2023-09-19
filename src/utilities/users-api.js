@@ -3,16 +3,32 @@
 // This file makes the request to the back end.
 const BASE_URL = "/api/users";
 
+// SIGN UP
 export async function signUp(userData) {
-  const res = await fetch(BASE_URL, {
+  const backendResponse = await fetch(BASE_URL, {
     method: "POST", // because creating a user
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(userData),
   });
-  if (res.ok) {
-    return res.json();
+  if (backendResponse.ok) {
+    return backendResponse.json();
   } else {
-    throw new Error(`Sign-Up Unsuccessful`);
+    throw new Error(`Couldn't Sign-Up`);
+  }
+}
+
+// LOG IN
+export async function login(credentials) {
+  const backendResponse = await fetch(`${BASE_URL}/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(credentials),
+  });
+
+  if (backendResponse.ok) {
+    return backendResponse.json();
+  } else {
+    throw new Error(`Couldn't Login`);
   }
 }
 /* 
@@ -54,9 +70,9 @@ export async function signUp(userData) {
   });
   // Check if request was successful
   // Res has an OK default property
-  if (res.ok) {
-    // res.json() will resolve to the JWT
-    return res.json();
+  // (SLIDES) STEP 3: "it needs to be persisted"
+  if (backendResponse.ok) {
+    return backendResponse.json();
   } else {
     throw new Error(`Sign-Up Unsuccessful`);
   }

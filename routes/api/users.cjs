@@ -3,10 +3,14 @@ const router = express.Router();
 // FUNCTION USED IN CONTROLLERS
 const usersCtrl = require("../../controllers/api/users.cjs");
 
-// POST /api/users
+// CREATE USER ROUTE
+// /api/users
 // APPENDS TO THE app.use path in the server (Back End)
 router.post("/", usersCtrl.create);
 
+// LOGIN ROUTE
+// /api/users/login
+router.post("/login", usersCtrl.login);
 module.exports = router;
 
 /*

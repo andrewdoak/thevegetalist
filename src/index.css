@@ -42,6 +42,9 @@ h6 {
   color: #0f261f;
 }
 
+a {
+  color: #ff616b;
+}
 main {
   display: flex;
   flex-direction: column;

@@ -4,8 +4,11 @@
 // THAT MEANS WE NEED OBJECTS
 const User = require("../../models/user.cjs");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+// EXPORTS
 module.exports = {
   create,
+  login,
 };
 
 // CREATE USER FUNCTION
@@ -24,6 +27,29 @@ async function create(req, res) {
     // Client will check for non-2xx status code
     // 400 = Bad Request
     res.status(400).json(err);
+  }
+}
+
+// CREATE LOGIN FUNCTION
+async function login(req, res) {
+  try {
+    // Query DB to find user with the email we have
+    // Filter object does the work
+    const user = await User.findOne({ email: req.body.email });
+    if (!user) throw new Error("User not found");
+    // If email is found, compare the password with it
+    // Will use bcrypt, need to import it.
+    // Match uses the bcrypt compare method
+    // Need to await
+    const match = await bcrypt.compare(req.body.password, user.password);
+    // Second check, passwords match
+    if (!match) throw new Error("Password Mismatch");
+    // Create the token if passwords match
+    const token = createJWT(user);
+    res.json(token);
+  } catch (error) {
+    console.log(err);
+    res.status(400).json("Bad Credentials");
   }
 }
 

@@ -36,7 +36,8 @@ export default class SignUpForm extends Component {
     // CREATE USER (resolves JWT payload, promise returned by signUp svc method)
     // SETS USER STATE WHEN LOGGED IN (displays NewOrders/History Routes)
     const user = await signUp(formData);
-    console.log(user);
+    // console.log(user);
+    this.props.setUser(user);
     try {
     } catch (error) {}
     // with functional component, you need to use a spread operator before the

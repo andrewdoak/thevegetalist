@@ -10,6 +10,10 @@ import AuthPage from "../AuthPage/AuthPage";
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 // COMPONENTS
 import NavBar from "../../components/NavBar/NavBar";
+// SERVICES
+import { getUser } from "../../utilities/users-service";
+// returns User or Null when updating state
+// fire it in user useState (formerly null)
 
 // APP
 export default function App() {
@@ -18,21 +22,23 @@ export default function App() {
   // Auth will show up at first if userState is null
   // Empty object was used for testing to show other pages
   // All connected to the ternary below
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(getUser);
   return (
     <main className="App">
       {user ? (
         // If we didn't want it to only show when logged in, you'd put it above the {user} ternary
         // Need a react fragment to render multiple top-level components in a return
         <>
-          <NavBar />
+          {/* user & setUser (from NavBar) passed as props */}
+          {/* need to use them also on auth page & user-service */}
+          <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path="/orders/new" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
           </Routes>
         </>
       ) : (
-        <AuthPage />
+        <AuthPage setUser={setUser} />
       )}
     </main>
   );
@@ -42,7 +48,7 @@ export default function App() {
 // https://ps-rtt-sei.herokuapp.com/15-week/mod-3/week-13/day-3/slides/
 // https://ps-rtt-sei.herokuapp.com/15-week/mod-3/week-14/day-1/slides/
 // https://ps-rtt-sei.herokuapp.com/15-week/mod-3/week-14/day-2/slides/
-// REMEMBER, ANYTHING CREATE REACT APP, WE'RE DOING VITE
+// REMEMBER, ANYTHING CREATE REACT APP, WE'RE DOING VITE (cjs)
 // SLIDES WON'T MATCH (NOTES BELOW AND IN SERVER.CJS)
 
 // CODE ALONG:
@@ -58,6 +64,14 @@ export default function App() {
 
 // DAY 4
 // =============
+// NOTE: copy notes from utils/users-api
+
+// Once login works, display it in the NavBar.
+// (CLEARED LOCAL STORAGE) localStorage.clear()
+// Create a new user
+
+// Go to NavBar
+
 // Putting AJAX request for login into a service module (not the SignUp form)
 // Service module is anything that is not not an AJAX call but not a view
 // We'll use it to make a token (maybe a util). Will call a try catch function. Then the Component will call that function.

@@ -82,6 +82,16 @@ https://pscohorts.slack.com/archives/C056A692JAX/p1694795108467469
 CODE ALONG 5: 
 https://pscohorts.slack.com/archives/C056A692JAX/p1695136396082119
 
+
+// DAY 5
+// =============
+Created user token in back end.
+Need to persist the JWT on front end through localStorage
+We're gonna do that in utilities/users-service.js
+  const-res receives token from controllers/api/users.js
+  the res.json in the async function there
+
+
 // DAY 3
 // =============
 // Create a CRUD-HELPER to test your models
