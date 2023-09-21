@@ -66,7 +66,7 @@ const PORT = process.env.PORT || 3001;
 
 // LISTENING PORT
 app.listen(PORT, function () {
-  console.log(`(server.cjs) Your Express Server is up at -P ${PORT}`);
+  console.log(`(server.cjs) Your Express Server is up at -P: (${PORT})`);
 });
 
 /* 
