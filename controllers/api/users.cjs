@@ -9,6 +9,7 @@ const bcrypt = require("bcrypt");
 module.exports = {
   create,
   login,
+  checkToken,
 };
 
 // CREATE USER FUNCTION
@@ -51,6 +52,15 @@ async function login(req, res) {
     console.log(err);
     res.status(400).json("Bad Credentials");
   }
+}
+
+// CHECK TOKEN (for routes/users.cjs)
+// Export at top!
+function checkToken(req, res) {
+  // req.user will always be there for you when a token is sent
+  console.log("req.user", req.user);
+  // sends expiration data
+  res.json(req.exp);
 }
 
 // HELPER FUNCTION to create JWT (NOTES BELOW)

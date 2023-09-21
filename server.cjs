@@ -25,6 +25,10 @@ app.use(logger("dev"));
 // Parses JSON
 app.use(express.json());
 
+// MIDDLEWARE FROM checkToken (need file extension)
+// sets req.user and req.exp on request object
+app.use(require("./config/checkToken.cjs"));
+
 // FAVICON
 // Need to feed it an favicon file (later)
 // app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
@@ -62,7 +66,7 @@ const PORT = process.env.PORT || 3001;
 
 // LISTENING PORT
 app.listen(PORT, function () {
-  console.log(`Express Server up and running on -P ${PORT}`);
+  console.log(`(server.cjs) Your Express Server is up at -P ${PORT}`);
 });
 
 /* 

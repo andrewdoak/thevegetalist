@@ -55,12 +55,30 @@ export function getUser() {
 export function logOut() {
   localStorage.removeItem("token");
 }
+
+// Used in OrderHistory
+// https://ps-rtt-sei.herokuapp.com/15-week/mod-3/week-14/day-2/slides/#add-the-checktoken-service-function
+export function checkToken() {
+  // Just so that you don't forget how to use .then
+  return (
+    usersAPI
+      .checkToken()
+      // checkToken returns a string, but let's
+      // make it a Date object for more flexibility (date methods like from flights)
+      .then((dateStr) => new Date(dateStr))
+  );
+}
+
 /* 
 SLIDES
 https://ps-rtt-sei.herokuapp.com/15-week/mod-3/week-14/day-2/slides/
 
 CODE ALONG
+Day 4
 https://app.slack.com/client/T04411PBUN8/C056A692JAX/thread/C056A692JAX-1695052776.226929
+
+Day 5
+https://pscohorts.slack.com/archives/C056A692JAX/p1695306881272789
 
 // DAY 4
 // =============

@@ -58,6 +58,8 @@ export default function App() {
 // DAY 3
 // DAY 4
 // https://app.slack.com/client/T04411PBUN8/C056A692JAX/thread/C056A692JAX-1695052776.226929
+// DAY 5
+// https://pscohorts.slack.com/archives/C056A692JAX/p1695306881272789
 
 // GITHUB REPO:
 // https://github.com/andrewdoak/sei-mern-cafe

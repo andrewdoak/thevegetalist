@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 // FUNCTION USED IN CONTROLLERS
 const usersCtrl = require("../../controllers/api/users.cjs");
+//
+const ensureLoggedIn = require("../../config/ensureLoggedIn.cjs");
 
 // CREATE USER ROUTE
 // /api/users
@@ -11,6 +13,13 @@ router.post("/", usersCtrl.create);
 // LOGIN ROUTE
 // /api/users/login
 router.post("/login", usersCtrl.login);
+
+// CONTROLLER ROUTE (runs Middleware)
+// Protected route (ensureLoggedIn runs first, then checkToken)
+// Both are Middleware
+// Can check login in Postman (localhost:3001/api/users/check-token)
+router.get("/check-token", ensureLoggedIn, usersCtrl.checkToken);
+
 module.exports = router;
 
 /*
