@@ -37,7 +37,7 @@ async function login(req, res) {
     // Query DB to find user with the email we have
     // Filter object does the work
     const user = await User.findOne({ email: req.body.email });
-    if (!user) throw new Error("User not found");
+    if (!user) throw new Error("User not Found");
     // If email is found, compare the password with it
     // Will use bcrypt, need to import it.
     // Match uses the bcrypt compare method

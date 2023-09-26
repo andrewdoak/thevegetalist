@@ -8,6 +8,7 @@
   --blue: #007ff7;
   --text-light: #968c84;
   --text-dark: #615954;
+  padding: 0.4rem 2rem;
 }
 
 *,
@@ -23,7 +24,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffcfc4;
+  background-color: #ffffff;
   padding: 2vmin;
   height: 100vh;
 }
@@ -42,8 +43,10 @@ h6 {
   color: #0f261f;
 }
 
+/* DUSKY GREEN */
+/* https://sanzo-wada.dmbk.io/swatch/dusky-green */
 a {
-  color: #ff616b;
+  color: #00592e;
 }
 main {
   display: flex;
@@ -137,14 +140,14 @@ input {
   padding: 1vmin;
   font-size: 2vmin;
   border: 0.1vmin solid var(--tan-3);
-  border-radius: 0.5vmin;
+  border-radius: 2.5vmin;
   color: var(--text-dark);
   background-image: none !important; /* prevent lastpass */
   outline: none;
 }
 
 input:focus {
-  border-color: var(--blue);
+  border-color: #7aff00;
 }
 
 button,
@@ -153,12 +156,11 @@ a.button {
   padding: 1vmin;
   color: var(--white);
   background-color: #0f261f;
-  font-size: 2vmin;
-  font-weight: bold;
+  font-size: 0.5rem;
   text-decoration: none;
   text-align: center;
   border: 0.1vmin solid var(--tan-2);
-  border-radius: 2.25vmin;
+  border-radius: 2.5vmin;
   outline: none;
   width: 4.5rem;
 }

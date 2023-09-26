@@ -1,3 +1,5 @@
+// CSS IMPORT
+import styles from "./NavBar.module.css";
 // LINK IMPORT
 import { Link } from "react-router-dom";
 // IMPORT EVERYTHING FROM USER SVC (*)
@@ -17,14 +19,16 @@ function NavBar(props) {
 
   return (
     <nav>
-      <span>Hi, {props.user.name}!</span>
+      <span className={styles.GrenadinePink}>{props.user.name}'s Garden</span>
+      &nbsp;&nbsp;&nbsp;
+      <Link to="/gardens/current">{`Current`}</Link>
       &nbsp;&nbsp;
-      <Link to="/orders">{`Order History`}</Link>
-      {` 🍳 `}
-      <Link to="/orders/new">{`New Order`}</Link>
-      {` 🍳 `}
-      <Link to="" onClick={handleLogOut}>
-        Log Out
+      <Link to="/gardens/new">{`+ New`}</Link>
+      &nbsp;&nbsp;
+      <Link to="/gardens">{`Archive`}</Link>
+      &nbsp;&nbsp;&nbsp;
+      <Link to="" onClick={handleLogOut} className={styles.GrenadinePink}>
+        Logout
       </Link>
     </nav>
   );

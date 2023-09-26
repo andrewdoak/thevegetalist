@@ -4,9 +4,9 @@ import LoginForm from "../../components/LogInForm/LogInForm";
 function AuthPage(props) {
   return (
     <main>
-      <h1>Sign Up</h1>
-      <SignUpForm setUser={props.setUser} />
+      <h1>Garden Planner</h1>
       <LoginForm setUser={props.setUser} />
+      <SignUpForm setUser={props.setUser} />
     </main>
   );
 }

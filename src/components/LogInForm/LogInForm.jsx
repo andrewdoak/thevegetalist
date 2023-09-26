@@ -30,6 +30,9 @@ export default function LoginForm({ setUser }) {
 
   return (
     <div>
+      <div>
+        <h4>Login</h4>
+      </div>
       {/* SLIDES HAD onSubmit in the DIV. NEEDS TO BE ON THE FORM */}
       <div className="form-container">
         <form autoComplete="off" onSubmit={handleSubmit}>
@@ -49,7 +52,7 @@ export default function LoginForm({ setUser }) {
             onChange={handleChange}
             required
           />
-          <button type="submit">LOG IN</button>
+          <button type="submit">Login</button>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>

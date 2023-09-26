@@ -5,9 +5,10 @@ import { useState } from "react";
 // ROUTER (destructured)
 import { Routes, Route } from "react-router-dom";
 // PAGES
-import NewOrderPage from "../NewOrderPage/NewOrderPage";
 import AuthPage from "../AuthPage/AuthPage";
-import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
+import NewPlotPage from "../NewPlotPage/NewPlotPage";
+import CurrentPlotPage from "./CurrentPlotPage/CurrentPlotPage";
+import PlotArchivePage from "../PlotArchivePage/PlotArchivePage";
 // COMPONENTS
 import NavBar from "../../components/NavBar/NavBar";
 // SERVICES
@@ -33,8 +34,11 @@ export default function App() {
           {/* need to use them also on auth page & user-service */}
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/orders/new" element={<NewOrderPage />} />
-            <Route path="/orders" element={<OrderHistoryPage />} />
+            <Route path="/gardens/new" element={<NewPlotPage />} />
+            <Route path="/gardens/current" element={<CurrentPlotPage />} />
+            <Route path="/gardens" element={<PlotArchivePage />} />
+            {/* CATCH ALL */}
+            {/* <Route path="*" element={<Navigate to="/orders/new" />} /> */}
           </Routes>
         </>
       ) : (
