@@ -1,5 +1,26 @@
 // USER CONTROLLER
 
+/* 
+TODO: methodOverride to delete USERS (may be another file)
+// REQUIRE FOR CRUD
+const express = require("express");
+const mongoose = require("mongoose");
+const app = express();
+const methodOverride = require("method-override");
+
+// MIDDLEWARE
+// LOG
+// parses url encoded bodies and and creates a new body object
+app.use((req, res, next) => {
+  console.log("Middleware is running for all routes");
+  next();
+});
+// OVERRIDES POST METHOD
+// NEED THIS TO CREATE AND DELETE
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: false })); 
+*/
+
 // MULTIPLE CONTROLLERS, ONE FILE
 // THAT MEANS WE NEED OBJECTS
 const User = require("../../models/user.cjs");

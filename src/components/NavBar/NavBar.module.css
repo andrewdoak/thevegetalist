@@ -27,6 +27,14 @@
 }
 
 span {
+  font-family: avenir;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.Logout {
+  color: #ff616b;
   font-family: Menlo;
   text-transform: uppercase;
   font-size: 0.75rem;

@@ -6,7 +6,7 @@ import { checkToken } from "../../utilities/users-service";
 function PlotArchivePage() {
   return (
     <div className={styles.PlotArchivePage}>
-      <h1 className={styles.h1}>Archives.</h1>
+      <h1 className={styles.h1}>Plot Archive.</h1>
       <p className={styles.p}>This page will show all past garden plots.</p>
       <p className={styles.p}>
         A list of vegetables might be displayed. They will be cards, and there

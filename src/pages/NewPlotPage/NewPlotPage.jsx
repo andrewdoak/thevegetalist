@@ -3,7 +3,7 @@ import styles from "./NewPlotPage.module.css";
 function NewPlotPage() {
   return (
     <div className={styles.NewPlotPage}>
-      <h1 className={styles.h1}>New.</h1>
+      <h1 className={styles.h1}>New Plot.</h1>
       <p className={styles.p}>
         This page will come pre-loaded with seeded vegetables displayed in a 4x8
         grid of garden squares. You MAY be able to edit N, S, E & W locations on

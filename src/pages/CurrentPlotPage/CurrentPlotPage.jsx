@@ -14,7 +14,7 @@ function CurrentPlotPage() {
 
   return (
     <div className={styles.CurrentPlotPage}>
-      <h1 className={styles.h1}>Current.</h1>
+      <h1 className={styles.h1}>Current Plot.</h1>
       <p className={styles.p}>
         This page will display the most recently edited plot. It will be a grid
         of 8 squares by 4 squares.
