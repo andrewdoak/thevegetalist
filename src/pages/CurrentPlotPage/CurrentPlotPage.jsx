@@ -1,4 +1,5 @@
-import { checkToken } from "../../../utilities/users-service";
+import styles from "./CurrentPlotPage.module.css";
+import { checkToken } from "../../utilities/users-service";
 
 function CurrentPlotPage() {
   const handleCheckToken = async () => {
@@ -12,8 +13,19 @@ function CurrentPlotPage() {
   };
 
   return (
-    <div>
-      <h1>My Plot</h1>
+    <div className={styles.CurrentPlotPage}>
+      <h1 className={styles.h1}>Current.</h1>
+      <p className={styles.p}>
+        This page will display the most recently edited plot. It will be a grid
+        of 8 squares by 4 squares.
+      </p>
+      <p className={styles.p}>STRETCH goal. Display hours of daylight today.</p>
+      <p className={styles.p}>
+        You will be able to EDIT the squares on the page by clicking on one of
+        the vegetable squares, or on one of the vegetable details below the plot
+        graphic. Following the link takes you to to a detail page of the
+        vegetable where you can edit what will be in that square.
+      </p>
       <button onClick={handleCheckToken}>Login Expiry</button>
     </div>
   );

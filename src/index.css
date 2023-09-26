@@ -8,7 +8,6 @@
   --blue: #007ff7;
   --text-light: #968c84;
   --text-dark: #615954;
-  padding: 0.4rem 2rem;
 }
 
 *,
@@ -25,13 +24,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffffff;
-  padding: 2vmin;
+  /* padding: 2vmin; */
   height: 100vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+p {
+  color: #0f261f;
 }
 
 h1,
@@ -57,6 +60,9 @@ main {
 }
 #root {
   height: 100%;
+  margin: 0 auto;
+  padding: 0rem 2rem;
+  text-align: center;
 }
 
 .align-ctr {
@@ -155,7 +161,7 @@ a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: #0f261f;
+  background-color: #172713;
   font-size: 0.5rem;
   text-decoration: none;
   text-align: center;

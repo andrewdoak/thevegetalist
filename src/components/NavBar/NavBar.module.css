@@ -1,5 +1,17 @@
-/* Grenadine Pink */
+/* COLORS */
 /* https://sanzo-wada.dmbk.io/ */
+
+/* Deep Slate Olive */
+.NavBar {
+  /* border-bottom: 0.25px solid #ff616ba6; */
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  width: 100vw;
+  box-shadow: 0px 1px 8px 0px rgb(188 188 188 / 61%);
+  background-color: rgba(255, 255, 255, 0.545);
+  backdrop-filter: blur(7px);
+}
+/* Grenadine Pink */
 .GrenadinePink {
   color: #ff616b;
 }
@@ -7,4 +19,15 @@
 /* Cossack Green */
 .CossackGreen {
   color: #328e13;
+}
+
+/* Dusky Green */
+.DuskyGreen {
+  color: #00592e;
+}
+
+span {
+  font-family: Menlo;
+  text-transform: uppercase;
+  font-size: 0.75rem;
 }

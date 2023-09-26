@@ -7,7 +7,7 @@ import { Routes, Route } from "react-router-dom";
 // PAGES
 import AuthPage from "../AuthPage/AuthPage";
 import NewPlotPage from "../NewPlotPage/NewPlotPage";
-import CurrentPlotPage from "./CurrentPlotPage/CurrentPlotPage";
+import CurrentPlotPage from "../CurrentPlotPage/CurrentPlotPage";
 import PlotArchivePage from "../PlotArchivePage/PlotArchivePage";
 // COMPONENTS
 import NavBar from "../../components/NavBar/NavBar";
@@ -47,6 +47,9 @@ export default function App() {
     </main>
   );
 }
+
+// GITHUB:
+// https://github.com/andrewdoak/garden-planner
 
 // SLIDES:
 // https://ps-rtt-sei.herokuapp.com/15-week/mod-3/week-13/day-3/slides/

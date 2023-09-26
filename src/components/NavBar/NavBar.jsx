@@ -18,15 +18,15 @@ function NavBar(props) {
   };
 
   return (
-    <nav>
-      <span className={styles.GrenadinePink}>{props.user.name}'s Garden</span>
-      &nbsp;&nbsp;&nbsp;
+    <nav className={styles.NavBar}>
       <Link to="/gardens/current">{`Current`}</Link>
       &nbsp;&nbsp;
-      <Link to="/gardens/new">{`+ New`}</Link>
-      &nbsp;&nbsp;
       <Link to="/gardens">{`Archive`}</Link>
-      &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;
+      <Link to="/gardens/new">{`+ New`}</Link>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span className={styles.DuskyGreen}>{props.user.name}'s Garden</span>
+      &nbsp;&nbsp;
       <Link to="" onClick={handleLogOut} className={styles.GrenadinePink}>
         Logout
       </Link>
