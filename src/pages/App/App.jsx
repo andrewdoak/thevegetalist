@@ -3,7 +3,7 @@ import "./App.css";
 // REACT IMPORTS
 import { useState } from "react";
 // ROUTER (destructured)
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 // PAGES
 import AuthPage from "../AuthPage/AuthPage";
 import NewPlotPage from "../NewPlotPage/NewPlotPage";
@@ -38,7 +38,7 @@ export default function App() {
             <Route path="/gardens/current" element={<CurrentPlotPage />} />
             <Route path="/gardens" element={<PlotArchivePage />} />
             {/* CATCH ALL */}
-            {/* <Route path="*" element={<Navigate to="/orders/new" />} /> */}
+            <Route path="*" element={<Navigate to="/gardens/current" />} />
           </Routes>
         </>
       ) : (
