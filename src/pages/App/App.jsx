@@ -9,6 +9,7 @@ import AuthPage from "../AuthPage/AuthPage";
 import NewPlotPage from "../NewPlotPage/NewPlotPage";
 import CurrentPlotPage from "../CurrentPlotPage/CurrentPlotPage";
 import PlotArchivePage from "../PlotArchivePage/PlotArchivePage";
+import UserSettingsPage from "../SettingsPage/UserSettingsPage";
 // COMPONENTS
 import NavBar from "../../components/NavBar/NavBar";
 // SERVICES
@@ -37,6 +38,10 @@ export default function App() {
             <Route path="/gardens/new" element={<NewPlotPage />} />
             <Route path="/gardens/current" element={<CurrentPlotPage />} />
             <Route path="/gardens" element={<PlotArchivePage />} />
+            <Route
+              path="/gardens/settings"
+              element={<UserSettingsPage user={user} setUser={setUser} />}
+            />
             {/* CATCH ALL */}
             <Route path="*" element={<Navigate to="/gardens/current" />} />
           </Routes>

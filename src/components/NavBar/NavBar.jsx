@@ -27,6 +27,10 @@ function NavBar(props) {
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <span className={styles.DuskyGreen}>{props.user.name}'s Garden</span>
       &nbsp;&nbsp;
+      <Link to="/gardens/settings" className={styles.Logout}>
+        Settings
+      </Link>
+      &nbsp;&nbsp;
       <Link to="" onClick={handleLogOut} className={styles.Logout}>
         Logout
       </Link>

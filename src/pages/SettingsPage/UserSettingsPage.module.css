@@ -1,0 +1,18 @@
+.UserSettingsPage {
+  margin-top: 1rem;
+}
+
+.p {
+  width: 35vw;
+  text-align: left;
+  font-family: Menlo;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.h1 {
+  text-align: left;
+  color: #ff616b;
+  font-size: 3rem;
+  font-family: source-code-pro;
+}

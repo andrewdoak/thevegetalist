@@ -1,9 +1,13 @@
+// import user from "../../models/user.cjs";
+
 const express = require("express");
 const router = express.Router();
 // FUNCTION USED IN CONTROLLERS
 const usersCtrl = require("../../controllers/api/users.cjs");
 //
 const ensureLoggedIn = require("../../config/ensureLoggedIn.cjs");
+
+// REMEMBER INDUCES!
 
 // CREATE USER ROUTE
 // /api/users
@@ -13,6 +17,12 @@ router.post("/", usersCtrl.create);
 // LOGIN ROUTE
 // /api/users/login
 router.post("/login", usersCtrl.login);
+
+// DELETE ROUTE
+router.delete("/", usersCtrl.deleteUser);
+
+// UPDATE ROUTE
+// router.put("/", usersCtrl, usersCtrl.update)
 
 // CONTROLLER ROUTE (runs Middleware)
 // Protected route (ensureLoggedIn runs first, then checkToken)

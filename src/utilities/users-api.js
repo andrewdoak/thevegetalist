@@ -14,7 +14,13 @@ export function login(credentials) {
   return sendRequest(`${BASE_URL}/login`, "POST", credentials);
 }
 
-// NO data sent, default is a get request (see helper below)
+// DELETE FUNCTION
+// TODO: Make an alert that asks if you want to delete for sure.
+// Notes on files and steps in _notes/user-delete-login
+export function deleteUser(credentials) {
+  return sendRequest(`${BASE_URL}`, "DELETE", credentials);
+}
+
 export function checkToken() {
   return sendRequest(`${BASE_URL}/check-token`);
 }

@@ -7,6 +7,7 @@ const path = require("path");
 // Other Dependencies (we just downloaded)
 const favicon = require("serve-favicon");
 const logger = require("morgan");
+const methodOverride = require("method-override");
 
 // DB Connection (through file)
 // Formerly done in the server.js
@@ -23,6 +24,30 @@ app.use(logger("dev"));
 // EXPRESS JSON
 // Parses JSON
 app.use(express.json());
+
+app.use(methodOverride("_method"));
+app.use((req, res, next) => {
+  console.log("Middleware is running for all routes");
+  next();
+});
+/* 
+TODO: methodOverride to delete USERS (may be another file)
+// REQUIRE FOR CRUD
+const methodOverride = require("method-override");
+
+// MIDDLEWARE
+// LOG
+// parses url encoded bodies and and creates a new body object
+app.use((req, res, next) => {
+  console.log("Middleware is running for all routes");
+  next();
+});
+// OVERRIDES POST METHOD
+// NEED THIS TO CREATE AND DELETE
+// JSON PARSER TAKES THE PLACE OF THIS
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: false })); 
+*/
 
 // MIDDLEWARE FROM checkToken (need file extension)
 // sets req.user and req.exp on request object
@@ -103,7 +128,7 @@ We're gonna do that in utilities/users-service.js
 // Create a CRUD-HELPER to test your models
 // touch crud-helper.cjs
 
-// Helps with playing with DB without hitting Expresss (a bit like console logging or inspecting)
+// Helps with playing with DB without hitting Express (a bit like console logging or inspecting)
 // Can use it to connect
 // Run by node crud-helper.cjs
 // Don't run with nodemon because nodemon uses Mongoose and you should only run that once

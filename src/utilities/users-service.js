@@ -23,6 +23,13 @@ export async function login(credentials) {
   return getUser();
 }
 
+// FUNCTION delete
+// Need a remove function in here
+// Need a remove function in both users-service and users-api
+export async function deleteUser(credentials) {
+  await usersAPI.deleteUser(credentials);
+}
+
 // FUNCTION getToken
 export function getToken() {
   // getItem returns null if there's no string
