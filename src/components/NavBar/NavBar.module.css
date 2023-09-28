@@ -52,6 +52,8 @@ span {
 
 .LoginName {
   font-family: avenir;
+  text-transform: capitalize;
+  font-size: 0.8rem;
   font-weight: bold;
   color: #ff616b;
 }

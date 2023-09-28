@@ -26,7 +26,18 @@ b {
   line-height: 1.5;
 }
 
-.pLink {
+.pLinkGreen {
+  text-align: left;
+  font-family: avenir;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  color: #172713;
+}
+
+.pLinkPink {
   text-align: left;
   font-family: menlo;
   text-transform: none;
@@ -54,12 +65,22 @@ b {
 
 .h4 {
   text-align: left;
-  color: #172713;
   font-size: 0.75rem;
   text-transform: uppercase;
   font-family: Avenir;
   margin-bottom: 0.45rem;
   margin-top: 2rem;
+  color: #172713;
+}
+
+.h4GrenadinePink {
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-family: Avenir;
+  margin-bottom: 0.45rem;
+  margin-top: 2rem;
+  color: #ff616b;
 }
 
 .h4ExtraMargin {

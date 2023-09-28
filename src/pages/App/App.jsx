@@ -40,6 +40,7 @@ export default function App() {
             <Route path="/gardens" element={<PlotArchivePage />} />
             <Route
               path="/settings"
+              // NEED TO SET STATE EVERY TIME IF STATE IS UPDATING
               element={<UserSettingsPage user={user} setUser={setUser} />}
             />
             {/* CATCH ALL */}
