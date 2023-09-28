@@ -1,12 +1,14 @@
 // import SignUpForm from "../../components/UserSettingsForm/UserSettingsForm";
 // import LoginForm from "../../components/LogInForm/LogInForm";
-// import Link from "react-router-dom";
-
 import styles from "./UserSettingsPage.module.css";
+// DEPENDENCIES
+import { Link } from "react-router-dom";
+// COMPONENTS
 import LoginForm from "../../components/LogInForm/LogInForm";
 import DeleteUserForm from "../../components/DeleteUserForm/DeleteUserForm";
+// SERVICES
 import { checkToken } from "../../utilities/users-service";
-import * as userService from "../../utilities/users-service";
+// import * as userService from "../../utilities/users-service";
 
 function UserSettingsPage(props) {
   const handleCheckToken = async () => {
@@ -27,8 +29,14 @@ function UserSettingsPage(props) {
       <h4 className={styles.h4}>{`A word...`}</h4>
       <p className={styles.p}>
         {`Gentle gardener——aka ${props.user.name}——you have arrived at a page that gives you power.
-        You know the saying, right? “With great power, comes great responsibility.” Use it (if you must)
+        You know the saying, right? “With great power, comes great responsibility.” Use it (if you must),
         but please use it with caution and wisdom. The power to delete is absolute. And it's irreversible.`}
+      </p>
+      <p className={styles.pLink}>
+        <Link
+          className={styles.pLink}
+          to="/gardens/current"
+        >{`I'm scared...(Take me home.)`}</Link>
       </p>
       <h4 className={styles.h4}>{`Check Login`}</h4>
       <p className={styles.p}>
@@ -38,10 +46,11 @@ function UserSettingsPage(props) {
         <button onClick={handleCheckToken}>Check Expiry</button>
       </div>
       <h4 className={styles.h4}>{`Delete ${props.user.name}`}</h4>
+      <p className={styles.p}>Use the form below with EXTREME CAUTION.</p>
       <p className={styles.p}>
-        Use the form below with EXTREME CAUTION. When you provide the email you
-        signed up with and click the “Delete User” button, your account will be
-        terminated. Yes, that means all your plots and planning.
+        When you provide the correct email, then click the “Delete User” button,
+        we'll kill your account. Yes, that means all your plots and planning
+        will also die, sadly.
       </p>
       <p className={styles.p}>{`
       Email on file is below...Final warning, ${props.user.name}.`}</p>

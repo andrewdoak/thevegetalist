@@ -1,5 +1,21 @@
 .UserSettingsPage {
-  margin-top: 1rem;
+  margin-top: 9rem;
+}
+
+a {
+  font-family: avenir;
+  font-weight: bold;
+  text-align: left;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.7rem;
+  color: #172713;
+}
+
+b {
+  font-family: Avenir;
+  text-transform: uppercase;
+  color: #172713;
 }
 
 .p {
@@ -10,6 +26,16 @@
   line-height: 1.5;
 }
 
+.pLink {
+  text-align: left;
+  font-family: menlo;
+  text-transform: none;
+  font-weight: lighter;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #ff616b;
+}
+
 .pGrenadinePink {
   width: 35vw;
   text-align: left;
@@ -17,12 +43,6 @@
   font-size: 0.8rem;
   line-height: 1.5;
   color: #ff616b;
-}
-
-b {
-  font-family: Avenir;
-  text-transform: uppercase;
-  color: #172713;
 }
 
 .h1 {

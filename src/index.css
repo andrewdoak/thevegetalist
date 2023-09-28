@@ -165,13 +165,14 @@ a.button {
   padding: 1vmin;
   color: var(--white);
   background-color: #172713;
-  font-size: 0.5rem;
+  font-size: 0.55rem;
   text-decoration: none;
   text-align: center;
   border: 0.1vmin solid var(--tan-2);
   border-radius: 2.5vmin;
   outline: none;
-  width: 4.5rem;
+  width: 5.75rem;
+  font-family: menlo;
 }
 
 button.btn-sm {
