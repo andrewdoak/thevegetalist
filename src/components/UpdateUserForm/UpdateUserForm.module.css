@@ -1,0 +1,16 @@
+.Form {
+  display: flex;
+  gap: 3vmin;
+  color: #ff616b;
+}
+
+.UpdateForm {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3vmin;
+  color: #ff616b;
+}
+
+.UpdateInput {
+  width: 50%;
+}

@@ -14,11 +14,18 @@ export function login(credentials) {
   return sendRequest(`${BASE_URL}/login`, "POST", credentials);
 }
 
-// DELETE FUNCTION
+// DELETE FUNCTION (UserSettingsPage.jsx)
+// (components/DeleteUserForm/DeleteUserForm.jsx)
 // TODO: Make an alert that asks if you want to delete for sure.
 // Notes on files and steps in _notes/user-delete-login
 export function deleteUser(credentials) {
   return sendRequest(`${BASE_URL}`, "DELETE", credentials);
+}
+
+// TODO: UPDATE USER (MODIFY DELETE)
+// (components/UpdateUserForm/UpdateUserForm.jsx)
+export function updateUser(credentials) {
+  return sendRequest(`${BASE_URL}`, "PUT", credentials);
 }
 
 export function checkToken() {

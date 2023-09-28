@@ -9,7 +9,7 @@ import AuthPage from "../AuthPage/AuthPage";
 import NewPlotPage from "../NewPlotPage/NewPlotPage";
 import CurrentPlotPage from "../CurrentPlotPage/CurrentPlotPage";
 import PlotArchivePage from "../PlotArchivePage/PlotArchivePage";
-import UserSettingsPage from "../SettingsPage/UserSettingsPage";
+import UserSettingsPage from "../UserSettingsPage/UserSettingsPage";
 // COMPONENTS
 import NavBar from "../../components/NavBar/NavBar";
 // SERVICES

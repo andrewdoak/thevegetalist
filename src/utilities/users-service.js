@@ -23,11 +23,21 @@ export async function login(credentials) {
   return getUser();
 }
 
-// FUNCTION delete
-// Need a remove function in here
+// FUNCTION deleteUser (from users-api, to SettingsPage)
 // Need a remove function in both users-service and users-api
 export async function deleteUser(credentials) {
   await usersAPI.deleteUser(credentials);
+}
+
+// FUNCTION updateUser  (from users-api, to SettingsPage)
+// TODO: modify Delete
+export async function updateUser(credentials) {
+  // DEFINE TOKEN
+  const token = await usersAPI.updateUser(credentials);
+  // PERSIST TOKEN
+  localStorage.setItem("token", token);
+  // getUser UPDATES User
+  return getUser();
 }
 
 // FUNCTION getToken

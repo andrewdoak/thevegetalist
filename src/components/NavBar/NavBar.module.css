@@ -49,16 +49,21 @@ span {
   font-size: 1.5rem;
   color: #ff616b;
 }
-.Settings {
+
+.LoginName {
   font-family: avenir;
   font-weight: bold;
+  color: #ff616b;
+}
+/* .Settings {
+  font-weight: lighter;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 0.7rem;
-}
+} */
 
 .Logout {
-  font-family: avenir;
+  font-weight: lighter;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bold;

@@ -8,6 +8,15 @@ const usersCtrl = require("../../controllers/api/users.cjs");
 const ensureLoggedIn = require("../../config/ensureLoggedIn.cjs");
 
 // REMEMBER INDUCES!
+/* 
+INDEX // router.get("/", 'your-model'Ctrl.function-fm-users-api);
+NEW NOT USING
+DELETE router.delete
+UPDATE // router.put
+CREATE router.post
+EDIT NOT USING
+SHOW // router.get("/:id", 'your-model'Ctrl.function-fm-users-api);
+*/
 
 // CREATE USER ROUTE
 // /api/users
@@ -22,7 +31,7 @@ router.post("/login", usersCtrl.login);
 router.delete("/", usersCtrl.deleteUser);
 
 // UPDATE ROUTE
-// router.put("/", usersCtrl, usersCtrl.update)
+router.put("/", usersCtrl.updateUser);
 
 // CONTROLLER ROUTE (runs Middleware)
 // Protected route (ensureLoggedIn runs first, then checkToken)

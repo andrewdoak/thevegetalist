@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 // COMPONENTS
 import LoginForm from "../../components/LogInForm/LogInForm";
 import DeleteUserForm from "../../components/DeleteUserForm/DeleteUserForm";
+import UpdateUserForm from "../../components/UpdateUserForm/UpdateUserForm";
 // SERVICES
 import { checkToken } from "../../utilities/users-service";
 // import * as userService from "../../utilities/users-service";
@@ -25,7 +26,10 @@ function UserSettingsPage(props) {
 
   return (
     <div className={styles.UserSettingsPage}>
+      {/* PAGE HEADING */}
       <h1 className={styles.h1}>Settings.</h1>
+
+      {/* WELCOME PARAGRAPH */}
       <h4 className={styles.h4}>{`A word...`}</h4>
       <p className={styles.p}>
         {`Gentle gardener——aka ${props.user.name}——you have arrived at a page that gives you power.
@@ -38,25 +42,45 @@ function UserSettingsPage(props) {
           to="/gardens/current"
         >{`I'm scared...(Take me home.)`}</Link>
       </p>
-      <h4 className={styles.h4}>{`Check Login`}</h4>
+
+      {/* UPDATE USERNAME */}
+      <h4
+        className={styles.h4ExtraMargin}
+      >{`Update User “${props.user.name}”`}</h4>
       <p className={styles.p}>
-        {`OK, OK, this first button isn't too dangerous. It just lets you check the expiration of your login.`}
+        Yes, this one is actually FUN! If you want to update your username, just
+        type it in below. Don't forget to write it down in case your login
+        expires!
+      </p>
+      <p className={styles.pGrenadinePink}>{`Username. ${props.user.name}`}</p>
+      <UpdateUserForm
+        className={styles.UpdateForm}
+        user={props.user}
+        setUser={props.setUser}
+      />
+
+      {/* LOGIN EXPIRATION */}
+      <h4 className={styles.h4}>{`Check Login Expiration`}</h4>
+      <p className={styles.p}>
+        {`OK, OK...this first button isn't too dangerous. It just lets you check the expiration of your login.`}
       </p>
       <div className={styles.Button}>
-        <button onClick={handleCheckToken}>Check Expiry</button>
+        <button onClick={handleCheckToken}>CHECK EXPIRY</button>
       </div>
-      <h4 className={styles.h4}>{`Delete ${props.user.name}`}</h4>
+
+      {/* DELETE ACCOUNT */}
+      <h4 className={styles.h4ExtraMargin}>{`Delete User Account`}</h4>
       <p className={styles.p}>Use the form below with EXTREME CAUTION.</p>
       <p className={styles.p}>
-        When you provide the correct email, then click the “Delete User” button,
-        we'll kill your account. Yes, that means all your plots and planning
-        will also die, sadly.
+        When you provide your email and click on “Delete User,” we'll kill your
+        account. Yes, that means all your plots and planning will also die.
+        Hopefully your actual plants won't!
       </p>
       <p className={styles.p}>{`
-      Email on file is below...Final warning, ${props.user.name}.`}</p>
-      <p className={styles.pGrenadinePink}>{`${props.user.email}`}</p>
+      Final warning ${props.user.name}!`}</p>
+      <p className={styles.pGrenadinePink}>{`Account. ${props.user.email}`}</p>
       <DeleteUserForm
-        className={styles.DeleteForm}
+        className={styles.UpdateForm}
         user={props.user}
         setUser={props.setUser}
       />

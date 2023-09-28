@@ -1,11 +1,12 @@
 // // LOGIN FORM
-import styles from "./DeleteUserForm.module.css";
+import styles from "./UpdateUserForm.module.css";
 import { useState } from "react";
 import * as usersService from "../../utilities/users-service";
 
-export default function DeleteForm({ user, setUser }) {
+export default function UpdateUserForm({ user, setUser }) {
   const [credentials, setCredentials] = useState({
-    email: "",
+    name: "",
+    id: user._id,
   });
   const [error, setError] = useState("");
 
@@ -14,41 +15,19 @@ export default function DeleteForm({ user, setUser }) {
     setError("");
   }
 
-  // LOGOUT FUNCTION
-  const handleLogOut = () => {
-    // Delegate to the users-service
-    usersService.logOut();
-    // Update state will also cause a re-render
-    setUser(null);
-  };
-
-  // DELETE USER FUNCTION
+  // UPDATE USER FUNCTION
   async function handleSubmit(evt) {
     // Prevent form from being submitted to the server
     evt.preventDefault();
     try {
-      //if (user.email === credentials.email) {}
-      await usersService.deleteUser(credentials);
-      handleLogOut();
+      console.log(credentials);
+      const updatedUser = await usersService.updateUser(credentials);
+      setUser(updatedUser);
     } catch (err) {
-      setError("Delete error. Try again.");
+      setError("Update error. Try again.");
       console.log(err);
     }
   }
-
-  /* 
-  const handleCheckToken = async () => {
-    try {
-      const expDate = await checkToken();
-      // Have date methods from users-service
-      alert(
-        `${props.user.name}'s login expires on ` + expDate.toLocaleString()
-      );
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  */
 
   return (
     <div>
@@ -62,15 +41,15 @@ export default function DeleteForm({ user, setUser }) {
         >
           {/* <label>Email</label> */}
           <input
-            className={styles.DeleteInput}
+            className={styles.UpdateInput}
             type="text"
-            name="email"
-            // placeholder="sign up email"
-            value={credentials.email}
+            name="name"
+            // placeholder="name"
+            value={credentials.name}
             onChange={handleChange}
             required
           />
-          <button type="submit">DELETE USER</button>
+          <button type="submit">UPDATE NAME</button>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>

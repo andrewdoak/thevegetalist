@@ -10,6 +10,7 @@ module.exports = {
   login,
   checkToken,
   deleteUser,
+  updateUser,
 };
 
 // CREATE USER FUNCTION
@@ -60,6 +61,22 @@ async function deleteUser(req, res) {
     console.log(req.body.email);
     await User.findOneAndDelete({ email: req.body.email });
     res.json("User Deleted");
+  } catch (error) {
+    res.status(400).json("Invalid Credentials");
+  }
+}
+
+// UPDATE USERNAME FUNCTION
+async function updateUser(req, res) {
+  try {
+    console.log(req.body.name);
+    const user = await User.findByIdAndUpdate(
+      req.body.id,
+      { name: req.body.name },
+      { new: true }
+    );
+    const token = createJWT(user);
+    res.json(token);
   } catch (error) {
     res.status(400).json("Invalid Credentials");
   }

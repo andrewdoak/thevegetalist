@@ -21,7 +21,7 @@ function NavBar(props) {
     <nav className={styles.NavBar}>
       <span className={styles.NavTitle}>The Vegetalist.</span>
       &nbsp;
-      <span className={styles.GrenadinePink}>{props.user.name}'s Garden</span>
+      <span className={styles.LoginName}>{props.user.name}'s Garden</span>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Link to="/gardens/current">{`Current`}</Link>
       &nbsp;&nbsp;
