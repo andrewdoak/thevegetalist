@@ -39,7 +39,7 @@ export default function App() {
             <Route path="/gardens/current" element={<CurrentPlotPage />} />
             <Route path="/gardens" element={<PlotArchivePage />} />
             <Route
-              path="/gardens/settings"
+              path="/settings"
               element={<UserSettingsPage user={user} setUser={setUser} />}
             />
             {/* CATCH ALL */}

@@ -4,77 +4,60 @@
 
 import styles from "./UserSettingsPage.module.css";
 import LoginForm from "../../components/LogInForm/LogInForm";
-import UserSettingsForm from "../../components/UserSettingsForm/UserSettingsForm";
+import DeleteUserForm from "../../components/DeleteUserForm/DeleteUserForm";
 import { checkToken } from "../../utilities/users-service";
 import * as userService from "../../utilities/users-service";
 
 function UserSettingsPage(props) {
-  // const handleCheckToken = async () => {
-  //   try {
-  //     const expDate = await checkToken();
-  //     // Have date methods from users-service
-  //     alert(`Your login expires on ` + expDate.toLocaleString());
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  const handleCheckToken = async () => {
+    try {
+      const expDate = await checkToken();
+      // Have date methods from users-service
+      alert(
+        `${props.user.name}'s login expires on ` + expDate.toLocaleString()
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className={styles.UserSettingsPage}>
       <h1 className={styles.h1}>Settings.</h1>
+      <h4 className={styles.h4}>{`A NOTE FOR ${props.user.name}`}</h4>
       <p className={styles.p}>
-        This page will allow users to update their login or delete their
-        account.
+        {`Gentle gardener, you have arrived at a page that gives you power.
+        As the saying goes: “with great power, comes great responsibility.” Use it, if you must,
+        but please do so with caution and wisdom. The power of deletion is absolute...and irreversible.`}
       </p>
-      <main>
-        <h4>Delete User</h4>
-        <UserSettingsForm user={props.user} setUser={props.setUser} />
-        {/* <button onClick={handleCheckToken}>Login Expiry</button> */}
-      </main>
+      <h4 className={styles.h4}>{`Check Login`}</h4>
+      <p className={styles.p}>
+        {`OK, OK, this first button isn't too dangerous. It just lets you check when your login
+        expires.`}
+      </p>
+      <div className={styles.Button}>
+        <button onClick={handleCheckToken}>Check Expiry</button>
+      </div>
+      <h4 className={styles.h4}>{`Delete ${props.user.name}`}</h4>
+      <p className={styles.p}>
+        Use the form below with EXTREME CAUTION. When you provide the email you
+        signed up with then click the “Delete User” button, your account will be
+        terminated. Yes, that means all your plots and planning.
+      </p>
+      <p className={styles.p}>{`
+      The email we have on file for you is below...Final warning, ${props.user.name}.`}</p>
+      <p className={styles.pGrenadinePink}>{`${props.user.email}`}</p>
+      <DeleteUserForm
+        className={styles.DeleteForm}
+        user={props.user}
+        setUser={props.setUser}
+      />
     </div>
   );
 }
 
 export default UserSettingsPage;
 
-// /*
-// function PlotArchivePage() {
-//   const handleCheckToken = async () => {
-//     try {
-//       const expDate = await checkToken();
-//       // Have date methods from users-service
-//       alert(`Your login expires on ` + expDate.toLocaleString());
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <h1>Archive</h1>
-//       <button onClick={handleCheckToken}>Check login</button>
-//     </div>
-//   );
-// }
-
-// export default PlotArchivePage;
-// */
-
-// // AUTH PAGE OG FUNCTION
-// /*
-// function AuthPage(props) {
-//   return (
-//     <main>
-//       <h1>User Settings Page</h1>
-//       <LoginForm setUser={props.setUser} />
-//       <SignUpForm setUser={props.setUser} />
-//     </main>
-//   );
-// }
-
-// export default AuthPage;
-// */
-
-// /*
-// CAN TEST LOG IN FORM IN REACT DEV TOOLS AND FILLING OUT THE OBJECT FOR SIGN UP
-// */
+/*
+CAN TEST LOG IN FORM IN REACT DEV TOOLS AND FILLING OUT THE OBJECT FOR SIGN UP
+*/

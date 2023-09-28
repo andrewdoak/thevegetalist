@@ -30,12 +30,10 @@ export default function LoginForm({ setUser }) {
 
   return (
     <div>
-      <div>
-        <h4>Login</h4>
-      </div>
       {/* SLIDES HAD onSubmit in the DIV. NEEDS TO BE ON THE FORM */}
       <div className="form-container">
         <form autoComplete="off" onSubmit={handleSubmit}>
+          <h4>Login</h4>
           <label>Email</label>
           <input
             type="text"

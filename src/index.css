@@ -118,7 +118,7 @@ main {
   align-content: normal;
   width: 28vw;
   padding: 7vmin;
-  background-color: var(--tan-1);
+  background-color: white;
   /* border: 0.1vmin solid var(--tan-3); */
   border-radius: 2vmin;
 }
@@ -130,16 +130,19 @@ p.error-message {
 }
 
 form {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 1.25vmin;
-  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  gap: 1.125vmin;
 }
 
 label {
-  font-size: 2vmin;
+  color: #0f261fc5;
+  text-transform: uppercase;
+  font-size: 1.45vmin;
   display: flex;
   align-items: center;
+  padding-top: 0.5rem;
+  padding-left: 0.65rem;
 }
 
 input {

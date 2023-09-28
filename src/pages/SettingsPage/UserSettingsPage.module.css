@@ -10,9 +10,49 @@
   line-height: 1.5;
 }
 
+.pGrenadinePink {
+  width: 35vw;
+  text-align: left;
+  font-family: Menlo;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #ff616b;
+}
+
+b {
+  font-family: Avenir;
+  text-transform: uppercase;
+  color: #172713;
+}
+
 .h1 {
   text-align: left;
   color: #ff616b;
   font-size: 3rem;
   font-family: source-code-pro;
+}
+
+.h4 {
+  text-align: left;
+  color: #172713;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-family: Avenir;
+  margin-bottom: 0.45rem;
+  margin-top: 2rem;
+}
+
+.Button {
+  display: flex;
+  text-align: left;
+  margin: -4.71px -6px;
+  width: fit-content;
+}
+
+.DeleteForm {
+  display: grid;
+  grid-template-columns: 1.75fr 1fr;
+  gap: 3vmin;
+  color: #ff616b;
+  width: 100%;
 }

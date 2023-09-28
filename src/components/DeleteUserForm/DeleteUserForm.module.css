@@ -1,0 +1,16 @@
+.DeleteForm {
+  display: flex;
+  gap: 3vmin;
+  color: #ff616b;
+}
+
+.DeleteForm {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3vmin;
+  color: #ff616b;
+}
+
+.DeleteInput {
+  width: 50%;
+}

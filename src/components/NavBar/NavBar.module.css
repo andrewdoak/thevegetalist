@@ -33,6 +33,14 @@ span {
   font-size: 0.7rem;
 }
 
+.Settings {
+  font-family: avenir;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.7rem;
+}
+
 .Logout {
   color: #ff616b;
   font-family: Menlo;

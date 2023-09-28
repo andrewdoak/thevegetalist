@@ -10,6 +10,15 @@
   line-height: 1.5;
 }
 
+.pAvenirBold {
+  width: 35vw;
+  text-align: left;
+  font-family: avenir;
+  font-weight: bold;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
 .h1 {
   text-align: left;
   color: #ff616b;

@@ -26,8 +26,8 @@ function NavBar(props) {
       <Link to="/gardens/new">{`+ New`}</Link>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <span className={styles.DuskyGreen}>{props.user.name}'s Garden</span>
-      &nbsp;&nbsp;
-      <Link to="/gardens/settings" className={styles.Logout}>
+      &nbsp;&nbsp;&nbsp;
+      <Link to="/settings" className={styles.Logout}>
         Settings
       </Link>
       &nbsp;&nbsp;

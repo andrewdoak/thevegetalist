@@ -1,4 +1,5 @@
 // // LOGIN FORM
+import styles from "./DeleteUserForm.module.css";
 import { useState } from "react";
 import * as usersService from "../../utilities/users-service";
 
@@ -13,6 +14,7 @@ export default function DeleteForm({ user, setUser }) {
     setError("");
   }
 
+  // LOGOUT FUNCTION
   const handleLogOut = () => {
     // Delegate to the users-service
     usersService.logOut();
@@ -20,6 +22,7 @@ export default function DeleteForm({ user, setUser }) {
     setUser(null);
   };
 
+  // DELETE USER FUNCTION
   async function handleSubmit(evt) {
     // Prevent form from being submitted to the server
     evt.preventDefault();
@@ -33,15 +36,36 @@ export default function DeleteForm({ user, setUser }) {
     }
   }
 
+  /* 
+  const handleCheckToken = async () => {
+    try {
+      const expDate = await checkToken();
+      // Have date methods from users-service
+      alert(
+        `${props.user.name}'s login expires on ` + expDate.toLocaleString()
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  */
+
   return (
     <div>
       {/* SLIDES HAD onSubmit in the DIV. NEEDS TO BE ON THE FORM */}
-      <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Email</label>
+      {/* className="form-container" */}
+      <div>
+        <form
+          autoComplete="off"
+          onSubmit={handleSubmit}
+          // className={styles.InputID}
+        >
+          {/* <label>Email</label> */}
           <input
+            className={styles.DeleteInput}
             type="text"
             name="email"
+            // placeholder="sign up email"
             value={credentials.email}
             onChange={handleChange}
             required
