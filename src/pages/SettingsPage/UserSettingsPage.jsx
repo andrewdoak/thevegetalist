@@ -24,16 +24,15 @@ function UserSettingsPage(props) {
   return (
     <div className={styles.UserSettingsPage}>
       <h1 className={styles.h1}>Settings.</h1>
-      <h4 className={styles.h4}>{`A NOTE FOR ${props.user.name}`}</h4>
+      <h4 className={styles.h4}>{`A word...`}</h4>
       <p className={styles.p}>
-        {`Gentle gardener, you have arrived at a page that gives you power.
-        As the saying goes: “with great power, comes great responsibility.” Use it, if you must,
-        but please do so with caution and wisdom. The power of deletion is absolute...and irreversible.`}
+        {`Gentle gardener——aka ${props.user.name}——you have arrived at a page that gives you power.
+        You know the saying, right? “With great power, comes great responsibility.” Use it (if you must)
+        but please use it with caution and wisdom. The power to delete is absolute. And it's irreversible.`}
       </p>
       <h4 className={styles.h4}>{`Check Login`}</h4>
       <p className={styles.p}>
-        {`OK, OK, this first button isn't too dangerous. It just lets you check when your login
-        expires.`}
+        {`OK, OK, this first button isn't too dangerous. It just lets you check the expiration of your login.`}
       </p>
       <div className={styles.Button}>
         <button onClick={handleCheckToken}>Check Expiry</button>
@@ -41,11 +40,11 @@ function UserSettingsPage(props) {
       <h4 className={styles.h4}>{`Delete ${props.user.name}`}</h4>
       <p className={styles.p}>
         Use the form below with EXTREME CAUTION. When you provide the email you
-        signed up with then click the “Delete User” button, your account will be
+        signed up with and click the “Delete User” button, your account will be
         terminated. Yes, that means all your plots and planning.
       </p>
       <p className={styles.p}>{`
-      The email we have on file for you is below...Final warning, ${props.user.name}.`}</p>
+      Email on file is below...Final warning, ${props.user.name}.`}</p>
       <p className={styles.pGrenadinePink}>{`${props.user.email}`}</p>
       <DeleteUserForm
         className={styles.DeleteForm}
