@@ -9,7 +9,7 @@ import DeleteUserForm from "../../components/DeleteUserForm/DeleteUserForm";
 import UpdateUserForm from "../../components/UpdateUserForm/UpdateUserForm";
 // SERVICES
 import { checkToken } from "../../utilities/users-service";
-// import * as userService from "../../utilities/users-service";
+import * as vegetablesService from "../../utilities/vegetables-service";
 
 function UserSettingsPage(props) {
   const handleCheckToken = async () => {

@@ -8,6 +8,7 @@ const path = require("path");
 const favicon = require("serve-favicon");
 const logger = require("morgan");
 const methodOverride = require("method-override");
+const ensureLoggedIn = require("./config/ensureLoggedIn.cjs");
 
 // DB Connection (through file)
 // Formerly done in the server.js
@@ -71,6 +72,9 @@ app.use(express.static(path.join(__dirname, "dist")));
 // USER ROUTER
 const userRouter = require("./routes/api/users.cjs");
 app.use("/api/users", userRouter);
+// VEGETABLE ROUTER
+const vegetableRouter = require("./routes/api/vegetables.cjs");
+app.use("/api/vegetables", ensureLoggedIn, vegetableRouter);
 
 // CATCH ALL
 // The following "catch all" route (note the *) is necessary

@@ -23,7 +23,8 @@ const vegetableSchema = new Schema(
     perSF: {
       type: Number,
       required: true,
-      //   enum: [1, 4, 9, 16],
+      // TODO: COMMENT IN AFTER EDITING SEED DATA
+      // enum: [1, 4, 9, 16],
       default: 4,
     },
 
@@ -53,10 +54,10 @@ const vegetableSchema = new Schema(
       required: true,
       default: "https://www.rareseeds.com/tomato-brad-s-atomic-grape",
     },
-    sortOrder: {
-      type: Number,
-      required: true,
-    },
+    // sortOrder: {
+    //   type: Number,
+    //   required: true,
+    // },
   },
   { timestamps: true }
 );
