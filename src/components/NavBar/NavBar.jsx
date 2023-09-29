@@ -20,19 +20,24 @@ function NavBar(props) {
   return (
     <nav className={styles.NavBar}>
       <span className={styles.NavTitle}>The Vegetalist.</span>
-      &nbsp;
-      <span className={styles.LoginName}>{props.user.name}'s Garden</span>
+      {/* USER DISPLAY AFTER SITE TITLE */}
+      {/* &nbsp;
+      <span className={styles.LoginName}>{props.user.name}'s Garden</span> */}
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <Link to="/gardens/current">{`Current`}</Link>
+      <Link to="/gardens/current">{props.user.name}'s Plot</Link>
       &nbsp;&nbsp;
-      <Link to="/gardens">{`Archive`}</Link>
+      {/* PLOT ARCHIVE (NOT USING) */}
+      {/* <Link to="/gardens">{`Archive`}</Link> */}
       &nbsp;&nbsp;
-      <Link to="/gardens/new">{`+ New +`}</Link>
+      {/* NEW GARDEN (NOT USING) */}
+      {/* <Link to="/gardens/new">{`+ New +`}</Link> */}
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      {/* SETTINGS */}
       <Link to="/settings" className={styles.Logout}>
         Settings
       </Link>
       &nbsp;&nbsp;
+      {/* LOGOUT */}
       <Link to="" onClick={handleLogOut} className={styles.Logout}>
         Logout
       </Link>

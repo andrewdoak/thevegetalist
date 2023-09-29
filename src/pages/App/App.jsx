@@ -35,9 +35,10 @@ export default function App() {
           {/* need to use them also on auth page & user-service */}
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/gardens/new" element={<NewPlotPage />} />
+            {/* <Route path="/gardens/new" element={<NewPlotPage />} /> */}
+            {/* WILL NEED vegetable={vegetable} setVegetable={setVegetable}  */}
             <Route path="/gardens/current" element={<CurrentPlotPage />} />
-            <Route path="/gardens" element={<PlotArchivePage />} />
+            {/* <Route path="/gardens" element={<PlotArchivePage />} /> */}
             <Route
               path="/settings"
               // NEED TO SET STATE EVERY TIME IF STATE IS UPDATING
