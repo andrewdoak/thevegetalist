@@ -27,8 +27,10 @@ export default function DeleteForm({ user, setUser }) {
     // Prevent form from being submitted to the server
     evt.preventDefault();
     try {
-      //if (user.email === credentials.email) {}
+      // if (user.email === credentials.email) {}
+      // alert(`${props.user.email}'s login deleted`);
       await usersService.deleteUser(credentials);
+
       handleLogOut();
     } catch (err) {
       setError("Delete error. Try again.");
