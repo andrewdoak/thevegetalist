@@ -23,8 +23,8 @@ const vegetableSchema = new Schema(
     perSF: {
       type: Number,
       required: true,
-      enum: ["1", "4", "9", "16"],
-      default: "4",
+      //   enum: [1, 4, 9, 16],
+      default: 4,
     },
 
     seedStarted: {
@@ -37,6 +37,7 @@ const vegetableSchema = new Schema(
       type: Date,
       // TODO: Can I just add the math here? Should I NOT require?
       // Look at Mongoose methods for Date.now()
+      //   How to get date plus 7 in javascript
       default: Date.now() + 7,
       // required: true,
     },
@@ -52,8 +53,10 @@ const vegetableSchema = new Schema(
       required: true,
       default: "https://www.rareseeds.com/tomato-brad-s-atomic-grape",
     },
-
-    // ... all the things in your notes SEE BELOW
+    sortOrder: {
+      type: Number,
+      required: true,
+    },
   },
   { timestamps: true }
 );
@@ -61,6 +64,10 @@ const vegetableSchema = new Schema(
 module.exports = model("Vegetable", vegetableSchema);
 
 /* 
+Josh Comment below:
+// ... all the things in your notes SEE BELOW
+
+My schema example
 type: "tomato",
 variety: "atomic purple",
 img: "imgURL",
