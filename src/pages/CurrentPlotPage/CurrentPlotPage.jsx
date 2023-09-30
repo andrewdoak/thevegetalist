@@ -44,26 +44,32 @@ function CurrentPlotPage() {
       {vegetables.map((vegetable, i) => {
         return (
           <div key={i}>
-            <p className={styles.pAvenirBold}>
-              {vegetable.type}, “{vegetable.variety}.” ( {vegetable.perSF} )
-              &nbsp;
-              <a
-                href={vegetable.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Source
-              </a>
-            </p>
             <p className={styles.p}>
-              Planted: {vegetable.seedStarted.toLocaleString("en-US")} <br />
-              Sprouted: {vegetable.seedGerminated.toLocaleString("en-US")}{" "}
               <br />
+              <span className={styles.vegType}>
+                {vegetable.sortOrder}. {vegetable.type}
+              </span>
+              <span className={styles.vegPerSF}> ({vegetable.perSF})</span>
             </p>
+
+            <div className={styles.duoTone}>
+              <img src={vegetable.img} alt="" />
+            </div>
+            {/* Harvest Data */}
             <p className={styles.p}>
-              Days to Maturity: {vegetable.daysToHarvest} <br />
+              <span className={styles.vegVariety}>{vegetable.variety}</span>
+              <br />
+              <span>
+                <a href={vegetable.variety} className={styles.vegLink}>
+                  Seed Source
+                </a>
+              </span>
+              <br />
+              <span className={styles.vegData}>Days to Maturity: </span>{" "}
+              {vegetable.daysToHarvest} <br />
               {/* TODO: Need JS function to add the days to sprouted */}
-              Harvest around: (e.g. "seedGerminated" + "daysToHarvest")
+              <span className={styles.vegData}>Harvest around: </span>
+              “Work some JS Magic”
             </p>
             <br />
           </div>
