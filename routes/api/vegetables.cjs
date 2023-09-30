@@ -3,7 +3,7 @@ const router = express.Router();
 // FUNCTION USED IN CONTROLLERS
 const vegetablesCtrl = require("../../controllers/api/vegetables.cjs");
 // FUNCTION USED IN CONFIG
-const ensureLoggedIn = require("../../config/ensureLoggedIn.cjs");
+// const ensureLoggedIn = require("../../config/ensureLoggedIn.cjs");
 
 // REMEMBER INDUCES!
 /* 
@@ -16,7 +16,7 @@ EDIT NOT USING
 SHOW // router.get("/:id", 'your-model'Ctrl.function-fm-users-api);
 */
 
-// router.get("/", vegetablesCtrl.getVegetable);
+router.get("/", vegetablesCtrl.vegetableIndex);
 // 5. "C" CREATE USER ROUTE
 // TODO: (IS THIS OUT OF ORDER?)
 // /api/vegetables

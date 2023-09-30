@@ -1,7 +1,25 @@
+import { useState, useEffect } from "react";
 import styles from "./CurrentPlotPage.module.css";
 import { checkToken } from "../../utilities/users-service";
+import { showVegetables } from "../../utilities/vegetables-api";
 
 function CurrentPlotPage() {
+  const [vegetables, setVegetables] = useState([]);
+  // const [error, setError] = useState("");
+
+  async function getVegetables() {
+    try {
+      const newVegetables = await showVegetables();
+      console.log(newVegetables);
+      setVegetables(newVegetables);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  useEffect(() => {
+    getVegetables();
+  }, []);
+
   return (
     <div className={styles.CurrentPlotPage}>
       <h1 className={styles.h1}>My Plot.</h1>
@@ -22,6 +40,35 @@ function CurrentPlotPage() {
       <p className={styles.pAvenirBold}>
         STRETCH goal. Display hours of daylight today.
       </p>
+      {/* {vegetable.sortOrder.toString()} */}
+      {vegetables.map((vegetable, i) => {
+        return (
+          <div key={i}>
+            <p className={styles.pAvenirBold}>
+              {vegetable.type}, “{vegetable.variety}.” ( {vegetable.perSF} )
+              &nbsp;
+              <a
+                href={vegetable.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Source
+              </a>
+            </p>
+            <p className={styles.p}>
+              Planted: {vegetable.seedStarted.toLocaleString("en-US")} <br />
+              Sprouted: {vegetable.seedGerminated.toLocaleString("en-US")}{" "}
+              <br />
+            </p>
+            <p className={styles.p}>
+              Days to Maturity: {vegetable.daysToHarvest} <br />
+              {/* TODO: Need JS function to add the days to sprouted */}
+              Harvest around: (e.g. "seedGerminated" + "daysToHarvest")
+            </p>
+            <br />
+          </div>
+        );
+      })}
     </div>
   );
 }

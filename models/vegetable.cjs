@@ -54,10 +54,10 @@ const vegetableSchema = new Schema(
       required: true,
       default: "https://www.rareseeds.com/tomato-brad-s-atomic-grape",
     },
-    // sortOrder: {
-    //   type: Number,
-    //   required: true,
-    // },
+    sortOrder: {
+      type: Number,
+      required: true,
+    },
   },
   { timestamps: true }
 );

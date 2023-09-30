@@ -1,14 +1,9 @@
+import { getToken } from "./users-service";
 const BASE_URL = "/api/vegetables";
 
 // SHOW VEGETABLE
-export function showVegetable() {
-  return sendRequest(`${BASE_URL}`);
-}
-
-// GET VEGETABLE (f)
-async function getVegetable() {
-  const vegetable = await showVegetable();
-  return vegetable;
+export async function showVegetables() {
+  return sendRequest(BASE_URL);
 }
 
 /*--- Helper Functions sendRequest---*/

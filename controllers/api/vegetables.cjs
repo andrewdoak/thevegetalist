@@ -1,12 +1,25 @@
 const Vegetable = require("../../models/vegetable.cjs");
 
 // EXPORTS
-// module.exports = {
-//   createVegetable,
-//   deleteVegetable,
-//   updateVegetable,
-// };
+module.exports = {
+  vegetableIndex,
+};
 
+/* 
+createVegetable,
+  deleteVegetable,
+  updateVegetable,
+*/
+
+// 1. All Vegetables (Index)
+async function vegetableIndex(req, res) {
+  try {
+    const vegetables = await Vegetable.find({}).sort("sortOrder").exec();
+    res.status(200).json(vegetables);
+  } catch (error) {
+    res.status(400).json({ msg: error.message });
+  }
+}
 // CREATE VEGETABLE FUNCTION
 // TAKES req, res BECAUSE IT'S A CONTROLLER FUNCTION
 // Like router.get or app.get
