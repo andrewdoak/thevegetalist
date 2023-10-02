@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 
+// TODO: Comment Required back in after finishing controller functions.
 const vegetableSchema = new Schema(
   {
     type: {
@@ -22,16 +23,16 @@ const vegetableSchema = new Schema(
 
     perSF: {
       type: Number,
-      required: true,
       // TODO: COMMENT IN AFTER EDITING SEED DATA
-      // enum: [1, 4, 9, 16],
+      enum: [1, 4, 9, 16],
       default: 4,
+      // required: true,
     },
 
     seedStarted: {
       type: Date,
       default: Date.now(),
-      required: true,
+      // required: true,
     },
 
     seedGerminated: {
@@ -46,13 +47,13 @@ const vegetableSchema = new Schema(
     daysToHarvest: {
       type: Number,
       default: 75,
-      required: true,
+      // required: true,
     },
 
     link: {
       type: String,
-      required: true,
       default: "https://www.rareseeds.com/tomato-brad-s-atomic-grape",
+      // required: true,
     },
     sortOrder: {
       type: Number,

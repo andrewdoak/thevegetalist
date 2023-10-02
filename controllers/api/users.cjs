@@ -1,9 +1,14 @@
 // USER CONTROLLER
-// MULTIPLE CONTROLLERS, ONE FILE
+// MULTIPLE CONTROLLERS FOR CRUD, ONE FILE
 // THAT MEANS WE NEED OBJECTS
+
+// MODEL IMPORT
 const User = require("../../models/user.cjs");
+
+// AUTH IMPORTS
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+
 // EXPORTS
 module.exports = {
   create,

@@ -1,12 +1,13 @@
 import { getToken } from "./users-service";
 const BASE_URL = "/api/vegetables";
 
-// SHOW VEGETABLE
+// 1. Index - SHOW VEGETABLE
 export async function showVegetables() {
   return sendRequest(BASE_URL);
 }
 
-/*--- Helper Functions sendRequest---*/
+/*--- HELPER FUNCTION sendRequest---*/
+// getToken from users-service.js
 async function sendRequest(url, method = "GET", payload = null) {
   // Fetch accepts an options object as the 2nd argument
   // used to include a data payload, set headers, etc.

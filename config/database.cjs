@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 
+// MONGO DB CONNECTION
+// First is the URL to Mongo Atlas
 mongoose.connect(process.env.DATABASE_URL);
-
 const db = mongoose.connection;
 
 db.on("connected", function () {

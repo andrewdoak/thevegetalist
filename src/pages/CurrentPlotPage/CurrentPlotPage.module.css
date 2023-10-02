@@ -67,22 +67,25 @@ img {
   width: 230px;
   height: 230px;
   display: flex;
-  filter: brightness(1.5) invert(0.17) saturate(0) sepia(0.25) contrast(120%)
+  filter: brightness(1) invert(0.17) saturate(0) sepia(0.25) contrast(120%)
     drop-shadow(0.7px 1px 2px rgba(0, 0, 0, 0.47));
   border-radius: 0.8rem;
 }
 
 .duoTone {
-  background-color: #fae0e2;
+  background-color: #ffeaecd4;
   width: 230px;
   height: 230px;
   border-radius: 0.8rem;
 }
 
 .duoTone img {
-  mix-blend-mode: darken;
-  -webkit-filter: grayscale(100%) contrast(1.2);
-  filter: grayscale(100%) contrast(1.2);
+  mix-blend-mode: luminosity;
+  -webkit-filter: grayscale(100%) contrast(0.8) brightness(1.15)
+    drop-shadow(0.7px 1px 2px rgba(0, 0, 0, 0.47));
+  filter: grayscale(100%) contrast(0.8) brightness(1.15)
+    drop-shadow(0.7px 1px 2px rgba(0, 0, 0, 0.47));
+  background-color: #216e32;
 }
 
 .duoTone::before {

@@ -22,10 +22,16 @@ const app = express();
 // For more info: documentation
 app.use(logger("dev"));
 
-// EXPRESS JSON
+// EXPRESS JSON (for parsing API requests)
 // Parses JSON
 app.use(express.json());
 
+// URL ENCODED (for parsing API requests)
+// TODO: May not need
+//Parse URL-encoded bodies
+app.use(express.urlencoded({ extended: true }));
+
+// METHOD OVERRIDE
 app.use(methodOverride("_method"));
 app.use((req, res, next) => {
   console.log("Middleware is running for all routes");
@@ -74,7 +80,8 @@ const userRouter = require("./routes/api/users.cjs");
 app.use("/api/users", userRouter);
 // VEGETABLE ROUTER
 const vegetableRouter = require("./routes/api/vegetables.cjs");
-app.use("/api/vegetables", ensureLoggedIn, vegetableRouter);
+app.use("/api/vegetables", vegetableRouter);
+// ensureLoggedIn,
 
 // CATCH ALL
 // The following "catch all" route (note the *) is necessary

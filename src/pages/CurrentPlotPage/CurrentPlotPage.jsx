@@ -60,7 +60,12 @@ function CurrentPlotPage() {
               <span className={styles.vegVariety}>{vegetable.variety}</span>
               <br />
               <span>
-                <a href={vegetable.variety} className={styles.vegLink}>
+                <a
+                  href={vegetable.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.vegLink}
+                >
                   Seed Source
                 </a>
               </span>

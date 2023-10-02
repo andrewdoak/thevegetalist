@@ -16,8 +16,17 @@ EDIT NOT USING
 SHOW // router.get("/:id", 'your-model'Ctrl.function-fm-users-api);
 */
 
+// 1. Index - GET endpoint
+// /api/vegetables
 router.get("/", vegetablesCtrl.vegetableIndex);
-// 5. "C" CREATE USER ROUTE
+
+// 2. New - POST endpoint
+// /api/vegetables
+router.post("/", vegetablesCtrl.addNewVegetable);
+
+module.exports = router;
+/* 
+// 5. "C" CREATE ROUTE
 // TODO: (IS THIS OUT OF ORDER?)
 // /api/vegetables
 // APPENDS TO THE app.use path in the server (Back End)
@@ -35,8 +44,7 @@ router.get("/", vegetablesCtrl.vegetableIndex);
 // Both are Middleware
 // Can check login in Postman (localhost:3001/api/users/check-token)
 // router.get("/check-token", ensureLoggedIn, usersCtrl.checkToken);
-
-module.exports = router;
+*/
 
 /*
 REMEMBER: cjs for file extension, not js (common JS)
