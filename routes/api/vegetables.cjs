@@ -24,6 +24,16 @@ router.get("/", vegetablesCtrl.vegetableIndex);
 // /api/vegetables
 router.post("/", vegetablesCtrl.addNewVegetable);
 
+// 4. Update - PUT endpoint
+// Update specific vegetable
+// /api/vegetables/:id
+router.put("/:VegetableId", vegetablesCtrl.updateVegetableWithID);
+
+// 9. Show - GET endpoint
+// GET specific vegetable
+// /api/vegetables/:id
+router.get("/:VegetableId", vegetablesCtrl.getVegetableWithID);
+
 module.exports = router;
 /* 
 // 5. "C" CREATE ROUTE

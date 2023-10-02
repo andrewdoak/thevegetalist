@@ -7,6 +7,7 @@ const path = require("path");
 // Other Dependencies (we just downloaded)
 const favicon = require("serve-favicon");
 const logger = require("morgan");
+const cors = require("cors");
 const methodOverride = require("method-override");
 const ensureLoggedIn = require("./config/ensureLoggedIn.cjs");
 
@@ -33,6 +34,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // METHOD OVERRIDE
 app.use(methodOverride("_method"));
+
+// CORS
+app.use(cors());
+
+// MIDDLEWARE LOG
 app.use((req, res, next) => {
   console.log("Middleware is running for all routes");
   next();
@@ -80,7 +86,7 @@ const userRouter = require("./routes/api/users.cjs");
 app.use("/api/users", userRouter);
 // VEGETABLE ROUTER
 const vegetableRouter = require("./routes/api/vegetables.cjs");
-app.use("/api/vegetables", vegetableRouter);
+app.use("/api/vegetables", ensureLoggedIn, vegetableRouter);
 // ensureLoggedIn,
 
 // CATCH ALL

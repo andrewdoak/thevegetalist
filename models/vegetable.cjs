@@ -10,13 +10,13 @@ const vegetableSchema = new Schema(
     },
     variety: {
       type: String,
-      required: true,
+      // required: true,
       default: "Atomic Grape",
     },
 
     img: {
       type: String,
-      required: true,
+      // required: true,
       default:
         "https://www.rareseeds.com/media/catalog/product/cache/c47cc5acc2b9ab2a357f100ee4780008/A/t/Atomic.jpg",
     },
@@ -57,7 +57,7 @@ const vegetableSchema = new Schema(
     },
     sortOrder: {
       type: Number,
-      required: true,
+      // required: true,
     },
   },
   { timestamps: true }

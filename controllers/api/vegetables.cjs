@@ -5,6 +5,8 @@ const VegetableModel = require("../../models/vegetable.cjs");
 module.exports = {
   vegetableIndex,
   addNewVegetable,
+  getVegetableWithID,
+  updateVegetableWithID,
 };
 
 /* 
@@ -12,11 +14,13 @@ module.exports = {
 1. INDEX - vegetableIndex
 2. NEW - createVegetable,
 3. DELETE - deleteVegetable,
-4. UPDATE - updateVegetable,
+4. UPDATE - updateVegetableWithID,
+9. SHOW - getVegetableWithID
 */
 
 // USE THESE IN ROUTES
-// 1. All Vegetables (Index)
+// 1. All Vegetables (I)
+// GET METHOD
 async function vegetableIndex(req, res) {
   try {
     const vegetablesFetch = await VegetableModel.find({})
@@ -28,7 +32,9 @@ async function vegetableIndex(req, res) {
     res.status(400).json({ msg: error.message });
   }
 }
-// 2. New Vegetable (New)
+// 2. New Vegetable (N)
+// addNewVegetable
+// POST METHOD
 async function addNewVegetable(req, res) {
   try {
     // CREATE vegetable and add to DB
@@ -43,31 +49,46 @@ async function addNewVegetable(req, res) {
   }
 }
 
-// DELETE VEGETABLE FUNCTION
-// TODO: GET RID OF TOKEN STUFF, UPDATE WITH WHAT I NEED FROM vegetableSchema
-async function deleteVegetable(req, res) {
+// 3. Delete Vegetable (D)
+// deleteVegetable
+// DELETE METHOD
+
+// 4. Update Vegetable (U)
+// updateVegetable,
+// PUT METHOD
+// req.body passes the new data to the body
+// new:true passes the updated data on to the DB
+// MAY need findByIdAndUpdate
+async function updateVegetableWithID(req, res) {
   try {
-    console.log(req.body.email);
-    await User.findOneAndDelete({ email: req.body.email });
-    res.json("Vegetable Deleted");
+    const vegetablesUpdateOne = await VegetableModel.findOneAndUpdate(
+      { _id: req.params.VegetableId },
+      req.body,
+      { new: true }
+    );
+    res.status(200).json(vegetablesUpdateOne);
   } catch (error) {
-    res.status(400).json("Invalid Credentials");
+    console.log(error);
+    // Client will check for non-2xx status code
+    // 400 = Bad Request
+    // 300 = Just not sending again
+    res.status(400).json({ msg: error.message });
   }
 }
 
-// UPDATE VEGETABLE FUNCTION
-// TODO: GET RID OF TOKEN STUFF, UPDATE WITH WHAT I NEED FROM vegetableSchema
-async function updateVegetable(req, res) {
+// 9. Show Vegetable
+// GET METHOD
+async function getVegetableWithID(req, res) {
   try {
-    console.log(req.body.name);
-    const user = await Vegetable.findByIdAndUpdate(
-      req.body.id,
-      { name: req.body.name },
-      { new: true }
+    const vegetablesFetchOne = await VegetableModel.findById(
+      req.params.VegetableId
     );
-    const token = createJWT(user);
-    res.json(token);
+    res.status(200).json(vegetablesFetchOne);
   } catch (error) {
-    res.status(400).json("Invalid Credentials");
+    console.log(error);
+    // Client will check for non-2xx status code
+    // 400 = Bad Request
+    // 300 = Just not sending again
+    res.status(400).json({ msg: error.message });
   }
 }
