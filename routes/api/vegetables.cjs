@@ -24,6 +24,11 @@ router.get("/", vegetablesCtrl.vegetableIndex);
 // /api/vegetables
 router.post("/", vegetablesCtrl.addNewVegetable);
 
+// 3. Delete - DELETE endpoint
+// Delete specific vegetable
+// /api/vegetables/:id
+router.delete("/:VegetableId", vegetablesCtrl.deleteVegetableWithID);
+
 // 4. Update - PUT endpoint
 // Update specific vegetable
 // /api/vegetables/:id

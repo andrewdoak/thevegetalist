@@ -57,7 +57,7 @@ const vegetableSchema = new Schema(
     },
     sortOrder: {
       type: Number,
-      // required: true,
+      required: true,
     },
   },
   { timestamps: true }

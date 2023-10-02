@@ -7,13 +7,14 @@ module.exports = {
   addNewVegetable,
   getVegetableWithID,
   updateVegetableWithID,
+  deleteVegetableWithID,
 };
 
 /* 
 // INDUCES
 1. INDEX - vegetableIndex
 2. NEW - createVegetable,
-3. DELETE - deleteVegetable,
+3. DELETE - deleteVegetableWithID,
 4. UPDATE - updateVegetableWithID,
 9. SHOW - getVegetableWithID
 */
@@ -52,6 +53,20 @@ async function addNewVegetable(req, res) {
 // 3. Delete Vegetable (D)
 // deleteVegetable
 // DELETE METHOD
+async function deleteVegetableWithID(req, res) {
+  try {
+    const vegetablesDeleteOne = await VegetableModel.findByIdAndDelete({
+      _id: req.params.VegetableId,
+    });
+    res.status(200).json(vegetablesDeleteOne);
+  } catch (error) {
+    console.log(error);
+    // Client will check for non-2xx status code
+    // 400 = Bad Request
+    // 300 = Just not sending again
+    res.status(400).json({ msg: "Deleted vegetable successfully" });
+  }
+}
 
 // 4. Update Vegetable (U)
 // updateVegetable,
