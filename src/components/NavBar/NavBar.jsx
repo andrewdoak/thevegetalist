@@ -25,7 +25,6 @@ function NavBar(props) {
       <Link to="" target="#" className={styles.Logout}>
         About
       </Link>
-      {/* <Link to="/gardens/new">{`+ New +`}</Link> */}
       {/* USERNAME AFTER SITE TITLE */}
       {/* &nbsp;
       <span className={styles.LoginName}>{props.user.name}'s Garden</span> */}

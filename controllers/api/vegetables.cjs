@@ -5,18 +5,18 @@ const VegetableModel = require("../../models/vegetable.cjs");
 module.exports = {
   vegetableIndex,
   addNewVegetable,
-  getVegetableWithID,
-  updateVegetableWithID,
   deleteVegetableWithID,
+  updateVegetableWithID,
+  getVegetableWithID,
 };
 
 /* 
 // INDUCES
-1. INDEX - vegetableIndex
-2. NEW - createVegetable,
-3. DELETE - deleteVegetableWithID,
-4. UPDATE - updateVegetableWithID,
-9. SHOW - getVegetableWithID
+1. INDEX - vegetableIndex, "GET"
+2. NEW - addNewVegetable, "POST"
+3. DELETE - deleteVegetableWithID, "DELETE"
+4. UPDATE - updateVegetableWithID, "PUT"
+9. SHOW - getVegetableWithID. "GET"
 */
 
 // USE THESE IN ROUTES

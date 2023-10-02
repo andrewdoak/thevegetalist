@@ -1,7 +1,8 @@
 import { useState } from "react";
-import * as usersService from "../../utilities/users-service";
+import styles from "./UpdateVegDetail.module.css";
+// import * as usersService from "../../utilities/users-service";
 
-export default function CreateVegForm({ setVegetable }) {
+export default function UpdateVegForm({ setVegetable }) {
   const [vegetable, setVegetable] = useState({
     type: "",
     variety: "",

@@ -6,9 +6,9 @@ import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 // PAGES
 import AuthPage from "../AuthPage/AuthPage";
-import NewPlotPage from "../NewPlotPage/NewPlotPage";
+import VegDetailPage from "../VegDetailPage/VegDetailPage";
 import CurrentPlotPage from "../CurrentPlotPage/CurrentPlotPage";
-import PlotArchivePage from "../PlotArchivePage/PlotArchivePage";
+// import PlotArchivePage from "../PlotArchivePage/PlotArchivePage";
 import UserSettingsPage from "../UserSettingsPage/UserSettingsPage";
 // COMPONENTS
 import NavBar from "../../components/NavBar/NavBar";
@@ -35,7 +35,7 @@ export default function App() {
           {/* need to use them also on auth page & user-service */}
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            {/* <Route path="/gardens/new" element={<NewPlotPage />} /> */}
+            <Route path="/vegetable/detail" element={<VegDetailPage />} />
             {/* WILL NEED vegetable={vegetable} setVegetable={setVegetable}  */}
             <Route path="/gardens/current" element={<CurrentPlotPage />} />
             {/* <Route path="/gardens" element={<PlotArchivePage />} /> */}

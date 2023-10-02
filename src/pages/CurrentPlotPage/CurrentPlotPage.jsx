@@ -1,5 +1,9 @@
-import { useState, useEffect } from "react";
+// CSS
 import styles from "./CurrentPlotPage.module.css";
+// DEPENDENCIES
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+// UTILITIES
 import { checkToken } from "../../utilities/users-service";
 import { showVegetables } from "../../utilities/vegetables-api";
 
@@ -57,7 +61,7 @@ function CurrentPlotPage() {
             </div>
             {/* Harvest Data */}
             <p className={styles.p}>
-              <span className={styles.vegVariety}>{vegetable.variety}</span>
+              <span className={styles.vegVariety}>{vegetable.variety}</span>{" "}
               <br />
               <span>
                 <a
@@ -67,7 +71,7 @@ function CurrentPlotPage() {
                   className={styles.vegLink}
                 >
                   Seed Source
-                </a>
+                </a>{" "}
               </span>
               <br />
               <span className={styles.vegData}>Days to Maturity: </span>{" "}
@@ -75,8 +79,12 @@ function CurrentPlotPage() {
               {/* TODO: Need JS function to add the days to sprouted */}
               <span className={styles.vegData}>Harvest around: </span>
               “Work some JS Magic”
+              <br />
+              <Link
+                to="/vegetable/detail"
+                className={styles.vegLink}
+              >{`+ Detail +`}</Link>
             </p>
-            <br />
           </div>
         );
       })}

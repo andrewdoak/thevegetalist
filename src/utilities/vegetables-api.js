@@ -1,9 +1,51 @@
 import { getToken } from "./users-service";
 const BASE_URL = "/api/vegetables";
 
-// 1. Index - SHOW VEGETABLE
+/* 
+// INDUCES
+1. INDEX - vegetableIndex, "GET"
+// Show all vegetables
+// // /api/vegetables
+
+2. NEW - addNewVegetable, "POST"
+// Post a new vegetable
+// /api/vegetables
+
+3. DELETE - deleteVegetableWithID, "DELETE"
+// Delete specific vegetable
+// /api/vegetables/:VegetableId
+
+4. UPDATE - updateVegetableWithID, "PUT"
+// Update specific vegetable
+// /api/vegetables/:VegetableId
+
+9. SHOW - getVegetableWithID. "GET"
+// GET specific vegetable
+// /api/vegetables/:VegetableId
+*/
+
+// 1. Index - SHOW ALL VEGETABLES
 export async function showVegetables() {
   return sendRequest(BASE_URL);
+}
+
+// 2. NEW - addNewVegetable (CONTROLLER), "POST"
+export async function addOneVegetable() {
+  return sendRequest(`${BASE_URL}`, "POST");
+}
+
+// 3. DELETE - deleteVegetableWithID, "DELETE"
+export async function deleteOneVegetable() {
+  return sendRequest(`${BASE_URL}/:VegetableId`, "DELETE");
+}
+
+// 4. UPDATE - updateVegetableWithID, "PUT"
+export async function updateOneVegetable() {
+  return sendRequest(`${BASE_URL}/:VegetableId`, "PUT");
+}
+// 9. SHOW - getVegetableWithID. "GET"
+export async function showOneVegetable() {
+  return sendRequest(`${BASE_URL}/:VegetableId`);
 }
 
 /*--- HELPER FUNCTION sendRequest---*/

@@ -26,17 +26,17 @@ router.post("/", vegetablesCtrl.addNewVegetable);
 
 // 3. Delete - DELETE endpoint
 // Delete specific vegetable
-// /api/vegetables/:id
+// /api/vegetables/:VegetableId
 router.delete("/:VegetableId", vegetablesCtrl.deleteVegetableWithID);
 
 // 4. Update - PUT endpoint
 // Update specific vegetable
-// /api/vegetables/:id
+// /api/vegetables/:VegetableId
 router.put("/:VegetableId", vegetablesCtrl.updateVegetableWithID);
 
 // 9. Show - GET endpoint
 // GET specific vegetable
-// /api/vegetables/:id
+// /api/vegetables/:VegetableId
 router.get("/:VegetableId", vegetablesCtrl.getVegetableWithID);
 
 module.exports = router;
