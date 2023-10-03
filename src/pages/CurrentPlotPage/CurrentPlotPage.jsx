@@ -54,13 +54,15 @@ function CurrentPlotPage() {
         >
           garden
         </a>{" "}
-        in Chicago. But it could display yours as well.
+        in Chicago. It could display yours as well. This plot is 4’ x 8’. When
+        divided up evenly into square feet, there are 32 squares.
       </p>
       <p className={styles.p}>
-        When you create your account and log in, you will able to ADD, EDIT, or
-        DELETE the squares on the page. To add a vegetable, click the link
-        above. To edit or delete, use the form on one of the vegetable details
-        below the plot graphic.
+        When you create your account and log in, you will able to manipulate the
+        squares on the page. Which helps in planning and tracking your plot for
+        the season. To add a vegetable to this plot (not ideal, it's FULL!),
+        click the link above. To edit or delete a square, use the form on the
+        corresponding the vegetable below the plot graphic.
       </p>
       <p className={styles.p}>
         The “PLANT SOURCE” link takes you to to the seed or seedling source
