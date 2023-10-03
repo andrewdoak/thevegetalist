@@ -10,9 +10,87 @@
   line-height: 1.5;
 }
 
+.pAvenirBold {
+  width: 35vw;
+  text-align: left;
+  font-family: avenir;
+  font-weight: bold;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
 .h1 {
   text-align: left;
   font-size: 3rem;
   font-family: source-code-pro;
   color: #172713;
+}
+
+.vegType {
+  font-family: source-code-pro;
+  font-size: 1.75rem;
+  line-height: 2.25;
+  text-transform: capitalize;
+}
+
+.vegPerSF {
+  font-family: Menlo;
+  font-size: 1.45rem;
+  font-weight: lighter;
+  color: #ff616b;
+}
+/* #ff616b */
+.vegVariety {
+  font-family: avenir;
+  text-transform: capitalize;
+  /* font-style: italic; */
+  font-size: 1.15rem;
+  color: #172713;
+  line-height: 1.75;
+}
+
+.vegLink {
+  font-family: menlo;
+  text-align: left;
+  /* font-style: italic; */
+  font-size: 0.79rem;
+  font-weight: lighter;
+  color: #ff616b;
+  line-height: 1.75;
+}
+.vegData {
+  font-family: Avenir;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+}
+
+img {
+  object-fit: cover;
+  width: 230px;
+  height: 230px;
+  display: flex;
+  filter: brightness(1) invert(0.17) saturate(0) sepia(0.25) contrast(120%)
+    drop-shadow(0.7px 1px 2px rgba(0, 0, 0, 0.47));
+  border-radius: 0.8rem;
+}
+
+.duoTone {
+  background-color: #ffeaecd4;
+  width: 230px;
+  height: 230px;
+  border-radius: 0.8rem;
+}
+
+.duoTone img {
+  mix-blend-mode: luminosity;
+  -webkit-filter: grayscale(100%) contrast(0.8) brightness(1.15)
+    drop-shadow(0.7px 1px 2px rgba(0, 0, 0, 0.47));
+  filter: grayscale(100%) contrast(0.8) brightness(1.15)
+    drop-shadow(0.7px 1px 2px rgba(0, 0, 0, 0.47));
+  background-color: #216e32;
+}
+
+.duoTone::before {
+  background-color: #216e32;
+  mix-blend-mode: lighten;
 }

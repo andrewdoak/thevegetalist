@@ -43,12 +43,14 @@ export default function UpdateVegForm(props) {
   */
   return (
     <div>
-      <div className="form-container">
+      {/* className="form-container" */}
+      <div>
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <h4>Edit Vegetable</h4>
+          <h4 className={styles.formTitle}>Edit Square</h4>
           {/* VEGETABLE TYPE */}
           <label>Type</label>
           <input
+            className={styles.input}
             type="text"
             name="type"
             value={vegetable.type}
@@ -58,6 +60,7 @@ export default function UpdateVegForm(props) {
           {/* VEGETABLE VARIETY */}
           <label>Variety</label>
           <input
+            className={styles.input}
             type="text"
             name="variety"
             value={vegetable.variety}
@@ -67,6 +70,7 @@ export default function UpdateVegForm(props) {
           {/* VEGETABLE IMAGE */}
           <label>Image URL</label>
           <input
+            className={styles.input}
             type="text"
             name="img"
             value={vegetable.img}
@@ -76,7 +80,12 @@ export default function UpdateVegForm(props) {
           {/* VEGETABLES PER/SF */}
           <label>Plants Per S.F.</label>
           {/* TODO: Check if the required etc. are right. */}
-          <select name="perSF" onChange={handleChange} required>
+          <select
+            name="perSF"
+            className={styles.dropDown}
+            onChange={handleChange}
+            required
+          >
             <option value="1">1</option>
             <option value="4">4</option>
             <option value="9">9</option>
@@ -85,6 +94,7 @@ export default function UpdateVegForm(props) {
           {/* SEED STARTED */}
           <label>Seed Started</label>
           <input
+            className={styles.input}
             type="datetime-local"
             name="seedStarted"
             value={vegetable.seedStarted}
@@ -94,6 +104,7 @@ export default function UpdateVegForm(props) {
           {/* SEED GERMINATED */}
           <label>Seed Germinated</label>
           <input
+            className={styles.input}
             type="datetime-local"
             name="seedGerminated"
             value={vegetable.seedGerminated}
@@ -104,6 +115,7 @@ export default function UpdateVegForm(props) {
           {/* TODO: is this text or a number? */}
           <label>Days until Mature</label>
           <input
+            className={styles.input}
             type="number"
             name="daysToHarvest"
             value={vegetable.daysToHarvest}
@@ -113,6 +125,7 @@ export default function UpdateVegForm(props) {
           {/* LINK TO DETAIL */}
           <label>Link</label>
           <input
+            className={styles.input}
             type="text"
             name="link"
             value={vegetable.link}

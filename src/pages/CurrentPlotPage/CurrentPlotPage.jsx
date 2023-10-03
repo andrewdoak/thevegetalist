@@ -6,7 +6,7 @@ import UpdateVegForm from "../../components/UpdateVegForm/UpdateVegForm";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 // UTILITIES
-import { checkToken } from "../../utilities/users-service";
+// import { checkToken } from "../../utilities/users-service";
 import {
   showVegetables,
   deleteOneVegetable,
@@ -45,22 +45,30 @@ function CurrentPlotPage() {
     <div className={styles.CurrentPlotPage}>
       <h1 className={styles.h1}>My Plot.</h1>
       <p className={styles.p}>
-        This page will display the most recently edited plot. It will be a grid
-        of 8 squares by 4 squares. There will also be details on the vegetables
-        in each square in a set of columns below the grid.
+        This page displays the plants in a real{" "}
+        <a
+          href="https://chicagocommunitygardens.org/2020/08/27/maxwell-street-community-garden/"
+          className={styles.a}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          garden
+        </a>{" "}
+        in Chicago. But it could display yours as well.
       </p>
       <p className={styles.p}>
-        You will be able to EDIT the squares on the page by clicking on one of
-        the vegetable squares, or on one of the vegetable details below the plot
-        graphic.
+        When you create your account and log in, you will able to ADD, EDIT, or
+        DELETE the squares on the page. To add a vegetable, click the link
+        above. To edit or delete, use the form on one of the vegetable details
+        below the plot graphic.
       </p>
       <p className={styles.p}>
-        Following the LINK takes you to to a detail page of the vegetable where
-        you can edit what will be in that square.
+        The “PLANT SOURCE” link takes you to to the seed or seedling source
+        where you can read more about the care of the plant/s you're growing.
       </p>
-      <p className={styles.pAvenirBold}>
+      {/* <p className={styles.pAvenirBold}>
         STRETCH goal. Display hours of daylight today.
-      </p>
+      </p> */}
       {/* {vegetable.sortOrder.toString()} */}
       {/* TODO: Reincorporate into a component */}
       {vegetables.map((vegetable, i) => {
@@ -102,7 +110,10 @@ function CurrentPlotPage() {
                 {`+ Detail +`}
               </Link>{" "} */}
               <br />
-              <button onClick={() => deleteVegetable(vegetable._id)}>
+              <button
+                className={styles.Button}
+                onClick={() => deleteVegetable(vegetable._id)}
+              >
                 Delete
               </button>
               <UpdateVegForm vegetable={vegetable} />

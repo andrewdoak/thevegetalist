@@ -32,7 +32,7 @@ function NavBar(props) {
       <Link to="/gardens/current">{props.user.name}'s Plot</Link>
       &nbsp;&nbsp;
       {/* ADD/DELETE VEGETABLE */}
-      <Link to="/vegetable/add-delete">{`Add/Delete Veg`}</Link>
+      <Link to="/vegetable/add">{`+ Add-a-Veg +`}</Link>
       &nbsp;&nbsp;
       {/* NEW GARDEN (NOT USING) */}
       {/* <Link to="/gardens/new">{`+ New +`}</Link> */}

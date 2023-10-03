@@ -42,10 +42,7 @@ export default function App() {
             <Route path="/vegetable/detail" element={<VegDetailPage />} />
             <Route path="/gardens/current" element={<CurrentPlotPage />} />
             {/* TODO: WILL NEED vegetable={vegetable} setVegetable={setVegetable} */}
-            <Route
-              path="/vegetable/add-delete"
-              element={<VegAddDeletePage />}
-            />
+            <Route path="/vegetable/add" element={<VegAddDeletePage />} />
             <Route
               path="/settings"
               // NEED TO SET STATE EVERY TIME IF STATE IS UPDATING

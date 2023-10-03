@@ -2,12 +2,25 @@
   margin-top: 9rem;
 }
 
+.a {
+  color: #172713;
+  font-family: Menlo;
+  font-weight: lighter;
+  text-decoration: underline;
+  color: #ff616b;
+}
 .p {
   width: 35vw;
   text-align: left;
   font-family: Menlo;
   font-size: 0.8rem;
   line-height: 1.5;
+}
+
+.Button {
+  text-align: center;
+  margin: 2.29px -3px;
+  width: 4rem;
 }
 
 .pAvenirBold {
@@ -51,7 +64,7 @@
 .vegLink {
   font-family: menlo;
   text-align: left;
-  /* font-style: italic; */
+  text-decoration: underline;
   font-size: 0.79rem;
   font-weight: lighter;
   color: #ff616b;

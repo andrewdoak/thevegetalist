@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import styles from "./AddVegForm.module.css";
+import styles from "./AddVegForm.module.css";
 import { addOneVegetable } from "../../utilities/vegetables-api";
 
 export default function AddVegForm(props) {
@@ -42,12 +42,14 @@ export default function AddVegForm(props) {
   */
   return (
     <div>
-      <div className="form-container">
+      {/* className="form-container" */}
+      <div>
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <h4>Add Vegetable</h4>
+          {/* <h4>Add Vegetable</h4> */}
           {/* VEGETABLE TYPE */}
-          <label>Type</label>
+          <label>Type (e.g. Tomato)</label>
           <input
+            className={styles.input}
             type="text"
             name="type"
             value={vegetable.type}
@@ -55,27 +57,20 @@ export default function AddVegForm(props) {
             required
           />
           {/* VEGETABLE VARIETY */}
-          <label>Variety</label>
+          <label>Variety (e.g. Atomic Grape)</label>
           <input
+            className={styles.input}
             type="text"
             name="variety"
             value={vegetable.variety}
             onChange={handleChange}
             required
           />
-          {/* VEGETABLE IMAGE */}
-          <label>Image URL</label>
-          <input
-            type="text"
-            name="img"
-            value={vegetable.img}
-            onChange={handleChange}
-            required
-          />
           {/* VEGETABLES PER/SF */}
-          <label>Plants Per S.F.</label>
+          <label>#/Square Foot (See instructions)</label>
           {/* TODO: Check if the required etc. are right. */}
           <select
+            className={styles.dropDown}
             name="perSF"
             onChange={handleChange}
             defaultValue={1}
@@ -87,8 +82,9 @@ export default function AddVegForm(props) {
             <option value="16">16</option>
           </select>
           {/* SEED STARTED */}
-          <label>Seed Started</label>
+          <label>Day Seed Started</label>
           <input
+            className={styles.input}
             type="datetime-local"
             name="seedStarted"
             value={vegetable.seedStarted}
@@ -96,8 +92,9 @@ export default function AddVegForm(props) {
             required
           />
           {/* SEED GERMINATED */}
-          <label>Seed Germinated</label>
+          <label>Day Seed Sprouted</label>
           <input
+            className={styles.input}
             type="datetime-local"
             name="seedGerminated"
             value={vegetable.seedGerminated}
@@ -106,33 +103,46 @@ export default function AddVegForm(props) {
           />
           {/* DAYS TO HARVEST */}
           {/* TODO: is this text or a number? */}
-          <label>Days until Mature</label>
+          <label>Ready in (# of days)</label>
           <input
+            className={styles.input}
             type="number"
             name="daysToHarvest"
             value={vegetable.daysToHarvest}
             onChange={handleChange}
             required
           />
-          {/* LINK TO DETAIL */}
-          <label>Link</label>
+          <label>Square # (1-32. Delete one first!)</label>
           <input
-            type="text"
-            name="link"
-            value={vegetable.link}
-            onChange={handleChange}
-            required
-          />
-          <label>Garden Square</label>
-          <input
+            className={styles.input}
             type="number"
             name="sortOrder"
             value={vegetable.sortOrder}
             onChange={handleChange}
             required
           />
+          {/* LINK TO DETAIL */}
+          <label>Link (Seed or plant)</label>
+          <input
+            className={styles.input}
+            type="text"
+            name="link"
+            value={vegetable.link}
+            onChange={handleChange}
+            required
+          />
+          {/* VEGETABLE IMAGE */}
+          <label>Image URL (See instructions)</label>
+          <input
+            className={styles.input}
+            type="text"
+            name="img"
+            value={vegetable.img}
+            onChange={handleChange}
+            required
+          />
 
-          <button type="submit">Add Vegetable</button>
+          <button type="submit">Add New Veg</button>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>
