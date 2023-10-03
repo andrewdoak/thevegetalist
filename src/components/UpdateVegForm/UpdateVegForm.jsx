@@ -1,19 +1,21 @@
 import { useState } from "react";
 import styles from "./UpdateVegForm.module.css";
-// import * as usersService from "../../utilities/users-service";
+import { updateOneVegetable } from "../../utilities/vegetables-api";
 
 export default function UpdateVegForm(props) {
   const [vegetable, setVegetable] = useState({
     type: "",
     variety: "",
     img: "",
-    perSF: "",
+    perSF: "1",
     seedStarted: "",
     seedGerminated: "",
     daysToHarvest: "",
     link: "",
   });
   const [error, setError] = useState("");
+
+  const [id, setID] = useState(props.vegetable._id);
 
   function handleChange(evt) {
     setVegetable({ ...vegetable, [evt.target.name]: evt.target.value });
@@ -23,8 +25,8 @@ export default function UpdateVegForm(props) {
   async function handleSubmit(evt) {
     evt.preventDefault();
     try {
-      const createdVegetable = await vegetableService.create(vegetable);
-      setVegetable(createdVegetable);
+      const createdVegetable = await updateOneVegetable(vegetable, id);
+      // setVegetable(createdVegetable);
     } catch {
       setError("Could not create your vegetable. Try again.");
     }
@@ -118,7 +120,7 @@ export default function UpdateVegForm(props) {
             required
           />
 
-          <button type="submit">Add Vegetable</button>
+          <button type="submit">Update</button>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>

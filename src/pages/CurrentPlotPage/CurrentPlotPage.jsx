@@ -1,5 +1,7 @@
 // CSS
 import styles from "./CurrentPlotPage.module.css";
+// COMPONENTS
+import UpdateVegForm from "../../components/UpdateVegForm/UpdateVegForm";
 // DEPENDENCIES
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -60,6 +62,7 @@ function CurrentPlotPage() {
         STRETCH goal. Display hours of daylight today.
       </p>
       {/* {vegetable.sortOrder.toString()} */}
+      {/* TODO: Reincorporate into a component */}
       {vegetables.map((vegetable, i) => {
         return (
           <div key={i}>
@@ -94,15 +97,15 @@ function CurrentPlotPage() {
               {/* TODO: Need JS function to add the days to sprouted */}
               <span className={styles.vegData}>Harvest around: </span>
               “Work some JS Magic”
-              <br />
-              <Link
-                to="/vegetable/detail"
-                className={styles.vegLink}
-              >{`+ Detail +`}</Link>{" "}
+              {/* <br />
+              <Link to="/vegetable/detail" className={styles.vegLink}>
+                {`+ Detail +`}
+              </Link>{" "} */}
               <br />
               <button onClick={() => deleteVegetable(vegetable._id)}>
                 Delete
               </button>
+              <UpdateVegForm vegetable={vegetable} />
             </p>
           </div>
         );
