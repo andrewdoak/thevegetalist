@@ -23,5 +23,7 @@ It's hard to choose, but I'm gonna go with the back end. The controllers, specif
 
 I'm also pretty proud of the Settings page which contains User CRUD. This was a multi-day group effort in breakout rooms, and wasn't planned as first order functionality for me, but I'm very glad it happened the way it did.
 
+Proud of my CSS, as well. I used modules. I look forward to learning Tailwind.
+
 # Code Learning Moments
 Collaborative "teaching" and learning moments with [Robert Davis](https://github.com/RDCoder8) on the Vegetables API functions, passing in the Data and Payload to those functions. Late night transformative coding growth for both of us. A thousand thanks, Robert. And so glad you ”get” as much as you “give.”
