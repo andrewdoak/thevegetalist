@@ -30,8 +30,9 @@ export async function showVegetables() {
 }
 
 // 2. NEW - addNewVegetable (CONTROLLER), "POST"
-export async function addOneVegetable() {
-  return sendRequest(`${BASE_URL}`, "POST");
+// (vegetable) = data / , vegetable = payload
+export async function addOneVegetable(vegetable) {
+  return sendRequest(`${BASE_URL}`, "POST", vegetable);
 }
 
 // 3. DELETE - deleteVegetableWithID, "DELETE"

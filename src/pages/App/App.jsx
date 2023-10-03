@@ -16,6 +16,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import { getUser } from "../../utilities/users-service";
 import VegAddDeletePage from "../VegAddDeletePage/VegAddDeletePage";
 // import VegDetailPage from "../VegDetailPage/VegDetailPage";
+
 // returns User or Null when updating state
 // fire it in user useState (formerly null)
 

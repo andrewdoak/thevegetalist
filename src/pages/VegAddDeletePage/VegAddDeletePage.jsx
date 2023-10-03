@@ -2,6 +2,8 @@ import styles from "./VegAddDeletePage.module.css";
 // CHECK TOKEN FOR LOGIN EXPIRATION EVENT HANDLER
 // USING ON CURRENT PAGE
 import { checkToken } from "../../utilities/users-service";
+// COMPONENTS
+import AddVegForm from "../../components/AddVegForm/AddVegForm";
 
 export default function VegAddDeletePage() {
   return (
@@ -10,6 +12,7 @@ export default function VegAddDeletePage() {
       <p className={styles.p}>
         User will be able to add and delete a vegetable on this page.
       </p>
+      <AddVegForm />
     </div>
   );
 }
