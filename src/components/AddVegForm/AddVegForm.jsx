@@ -47,7 +47,7 @@ export default function AddVegForm(props) {
         <form autoComplete="off" onSubmit={handleSubmit}>
           {/* <h4>Add Vegetable</h4> */}
           {/* VEGETABLE TYPE */}
-          <label>Type (e.g. Tomato)</label>
+          <label className={styles.label}>Type (e.g. Tomato)</label>
           <input
             className={styles.input}
             type="text"
@@ -57,7 +57,7 @@ export default function AddVegForm(props) {
             required
           />
           {/* VEGETABLE VARIETY */}
-          <label>Variety (e.g. Atomic Grape)</label>
+          <label className={styles.label}>Variety (e.g. Atomic Grape)</label>
           <input
             className={styles.input}
             type="text"
@@ -67,7 +67,9 @@ export default function AddVegForm(props) {
             required
           />
           {/* VEGETABLES PER/SF */}
-          <label>#/Square Foot (See instructions)</label>
+          <label className={styles.label}>
+            #/Square Foot (See instructions)
+          </label>
           {/* TODO: Check if the required etc. are right. */}
           <select
             className={styles.dropDown}
@@ -82,7 +84,7 @@ export default function AddVegForm(props) {
             <option value="16">16</option>
           </select>
           {/* SEED STARTED */}
-          <label>Day Seed Started</label>
+          <label className={styles.label}>Day Seed Started</label>
           <input
             className={styles.input}
             type="datetime-local"
@@ -92,7 +94,7 @@ export default function AddVegForm(props) {
             required
           />
           {/* SEED GERMINATED */}
-          <label>Day Seed Sprouted</label>
+          <label className={styles.label}>Day Seed Sprouted</label>
           <input
             className={styles.input}
             type="datetime-local"
@@ -103,7 +105,7 @@ export default function AddVegForm(props) {
           />
           {/* DAYS TO HARVEST */}
           {/* TODO: is this text or a number? */}
-          <label>Ready in (# of days)</label>
+          <label className={styles.label}>Ready in (# of days)</label>
           <input
             className={styles.input}
             type="number"
@@ -112,7 +114,7 @@ export default function AddVegForm(props) {
             onChange={handleChange}
             required
           />
-          <label>Square # (1-32. Delete one first!)</label>
+          <label className={styles.label}>Square #1-32. (ideally)</label>
           <input
             className={styles.input}
             type="number"
@@ -121,28 +123,8 @@ export default function AddVegForm(props) {
             onChange={handleChange}
             required
           />
-          {/* LINK TO DETAIL */}
-          <label>Link (Seed or plant)</label>
-          <input
-            className={styles.input}
-            type="text"
-            name="link"
-            value={vegetable.link}
-            onChange={handleChange}
-            required
-          />
-          {/* VEGETABLE IMAGE */}
-          <label>Image URL (See instructions)</label>
-          <input
-            className={styles.input}
-            type="text"
-            name="img"
-            value={vegetable.img}
-            onChange={handleChange}
-            required
-          />
 
-          <button type="submit">Add New Veg</button>
+          <button type="submit">Add Veg</button>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>

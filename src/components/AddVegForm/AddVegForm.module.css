@@ -8,6 +8,9 @@
   margin: 3rem 0rem 0rem 0rem;
 }
 
+.label {
+  font-family: Menlo;
+}
 .input {
   width: 60%;
 }
