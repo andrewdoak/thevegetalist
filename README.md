@@ -21,5 +21,7 @@ Among the future enhancements I'm most excited to integrate, because it will be 
 # Code Pride
 It's hard to choose, but I'm gonna go with the back end. The controllers, specifically. I know this stumped so many people. And it probably would have me as well, but I turned to my trusty project week companion, LinkedIn Learning, specifically Emannuel Henry's course MERN Essential Training. I was able to adapt and refactor what he demonstrated, test in Postman, and had seamless CRUD on the back end before touching that on the front end. Super useful and also felt like good separation of concerns and Agile methodology.
 
+I'm also pretty proud of the Settings page which contains User CRUD. This was a multi-day group effort in breakout rooms, and wasn't planned as first order functionality for me, but I'm very glad it happened the way it did.
+
 # Code Learning Moments
 Collaborative "teaching" and learning moments with [Robert Davis](https://github.com/RDCoder8) on the Vegetables API functions, passing in the Data and Payload to those functions. Late night transformative coding growth for both of us. A thousand thanks, Robert. And so glad you ”get” as much as you “give.”
