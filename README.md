@@ -1,5 +1,5 @@
-### Introduction
-
+# Introduction
+The Vegetalist is an app that is designed as a helper for planning and tracking a [Square Foot Garden](https://squarefootgardening.org/). 
 
 # Technologies
 - MERN Stack (MongoDB, Express, React, NodeJS)
