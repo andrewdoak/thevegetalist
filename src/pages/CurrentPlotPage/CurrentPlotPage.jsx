@@ -5,12 +5,16 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 // UTILITIES
 import { checkToken } from "../../utilities/users-service";
-import { showVegetables } from "../../utilities/vegetables-api";
+import {
+  showVegetables,
+  deleteOneVegetable,
+} from "../../utilities/vegetables-api";
 
 function CurrentPlotPage() {
   const [vegetables, setVegetables] = useState([]);
   // const [error, setError] = useState("");
 
+  // SHOW ALL VEGETABLES
   async function getVegetables() {
     try {
       const newVegetables = await showVegetables();
@@ -23,6 +27,17 @@ function CurrentPlotPage() {
   useEffect(() => {
     getVegetables();
   }, []);
+
+  // DELETE ONE VEGETABLE
+  async function deleteVegetable(id) {
+    try {
+      console.log("Clicked");
+      console.log(id);
+      await deleteOneVegetable(id);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div className={styles.CurrentPlotPage}>
@@ -83,7 +98,11 @@ function CurrentPlotPage() {
               <Link
                 to="/vegetable/detail"
                 className={styles.vegLink}
-              >{`+ Detail +`}</Link>
+              >{`+ Detail +`}</Link>{" "}
+              <br />
+              <button onClick={() => deleteVegetable(vegetable._id)}>
+                Delete
+              </button>
             </p>
           </div>
         );

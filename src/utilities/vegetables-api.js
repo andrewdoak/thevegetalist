@@ -35,8 +35,8 @@ export async function addOneVegetable() {
 }
 
 // 3. DELETE - deleteVegetableWithID, "DELETE"
-export async function deleteOneVegetable() {
-  return sendRequest(`${BASE_URL}/:VegetableId`, "DELETE");
+export async function deleteOneVegetable(id) {
+  return sendRequest(`${BASE_URL}/${id}`, "DELETE");
 }
 
 // 4. UPDATE - updateVegetableWithID, "PUT"

@@ -9,14 +9,11 @@ import {
 } from "../../utilities/vegetables-api";
 
 // WILL CONTAIN CRUD FUNCTIONS
-import React from "react";
-
-function ShowVegDetail() {
+export default function ShowVegDetail() {
+  // State goes here
   return (
-    <div>
-      <h1>My Vegetable.</h1>
+    <div className={styles.ShowVegDetail}>
+      <p className={styles.p}>Veg detail information goes here.</p>
     </div>
   );
 }
-
-export default ShowVegDetail;

@@ -1,4 +1,4 @@
-// // LOGIN FORM
+// // UPDATE USER FORM
 import styles from "./UpdateUserForm.module.css";
 import { useState } from "react";
 import * as usersService from "../../utilities/users-service";

@@ -14,6 +14,8 @@ import UserSettingsPage from "../UserSettingsPage/UserSettingsPage";
 import NavBar from "../../components/NavBar/NavBar";
 // SERVICES
 import { getUser } from "../../utilities/users-service";
+import VegAddDeletePage from "../VegAddDeletePage/VegAddDeletePage";
+// import VegDetailPage from "../VegDetailPage/VegDetailPage";
 // returns User or Null when updating state
 // fire it in user useState (formerly null)
 
@@ -35,16 +37,21 @@ export default function App() {
           {/* need to use them also on auth page & user-service */}
           <NavBar user={user} setUser={setUser} />
           <Routes>
+            {/* TODO: WILL NEED vegetable={vegetable} setVegetable={setVegetable} */}
             <Route path="/vegetable/detail" element={<VegDetailPage />} />
-            {/* WILL NEED vegetable={vegetable} setVegetable={setVegetable}  */}
             <Route path="/gardens/current" element={<CurrentPlotPage />} />
-            {/* <Route path="/gardens" element={<PlotArchivePage />} /> */}
+            {/* TODO: WILL NEED vegetable={vegetable} setVegetable={setVegetable} */}
+            <Route
+              path="/vegetable/add-delete"
+              element={<VegAddDeletePage />}
+            />
             <Route
               path="/settings"
               // NEED TO SET STATE EVERY TIME IF STATE IS UPDATING
               element={<UserSettingsPage user={user} setUser={setUser} />}
             />
             {/* CATCH ALL */}
+            {/*  */}
             <Route path="*" element={<Navigate to="/gardens/current" />} />
           </Routes>
         </>

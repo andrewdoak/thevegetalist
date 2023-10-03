@@ -31,8 +31,8 @@ function NavBar(props) {
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Link to="/gardens/current">{props.user.name}'s Plot</Link>
       &nbsp;&nbsp;
-      {/* PLOT ARCHIVE (NOT USING) */}
-      {/* <Link to="/gardens">{`Archive`}</Link> */}
+      {/* ADD/DELETE VEGETABLE */}
+      <Link to="/vegetable/add-delete">{`Add/Delete Veg`}</Link>
       &nbsp;&nbsp;
       {/* NEW GARDEN (NOT USING) */}
       {/* <Link to="/gardens/new">{`+ New +`}</Link> */}

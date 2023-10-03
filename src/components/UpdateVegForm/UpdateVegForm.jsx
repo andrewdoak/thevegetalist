@@ -1,8 +1,8 @@
 import { useState } from "react";
-import styles from "./UpdateVegDetail.module.css";
+import styles from "./UpdateVegForm.module.css";
 // import * as usersService from "../../utilities/users-service";
 
-export default function UpdateVegForm({ setVegetable }) {
+export default function UpdateVegForm(props) {
   const [vegetable, setVegetable] = useState({
     type: "",
     variety: "",
@@ -43,7 +43,7 @@ export default function UpdateVegForm({ setVegetable }) {
     <div>
       <div className="form-container">
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <h4>Add Vegetable</h4>
+          <h4>Edit Vegetable</h4>
           {/* VEGETABLE TYPE */}
           <label>Type</label>
           <input
@@ -63,7 +63,7 @@ export default function UpdateVegForm({ setVegetable }) {
             required
           />
           {/* VEGETABLE IMAGE */}
-          <label>Image</label>
+          <label>Image URL</label>
           <input
             type="text"
             name="img"
@@ -81,7 +81,7 @@ export default function UpdateVegForm({ setVegetable }) {
             <option value="16">16</option>
           </select>
           {/* SEED STARTED */}
-          <label>Started</label>
+          <label>Seed Started</label>
           <input
             type="datetime-local"
             name="seedStarted"
@@ -90,7 +90,7 @@ export default function UpdateVegForm({ setVegetable }) {
             required
           />
           {/* SEED GERMINATED */}
-          <label>Germinated</label>
+          <label>Seed Germinated</label>
           <input
             type="datetime-local"
             name="seedGerminated"
@@ -100,7 +100,7 @@ export default function UpdateVegForm({ setVegetable }) {
           />
           {/* DAYS TO HARVEST */}
           {/* TODO: is this text or a number? */}
-          <label>Maturation</label>
+          <label>Days until Mature</label>
           <input
             type="number"
             name="daysToHarvest"

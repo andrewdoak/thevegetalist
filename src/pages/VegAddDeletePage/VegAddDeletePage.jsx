@@ -1,21 +1,18 @@
-import styles from "./PlotArchivePage.module.css";
+import styles from "./VegAddDeletePage.module.css";
 // CHECK TOKEN FOR LOGIN EXPIRATION EVENT HANDLER
 // USING ON CURRENT PAGE
 import { checkToken } from "../../utilities/users-service";
 
-function PlotArchivePage() {
+export default function VegAddDeletePage() {
   return (
-    <div className={styles.PlotArchivePage}>
-      <h1 className={styles.h1}>Plot Archive.</h1>
-      <p className={styles.p}>This page will show all past garden plots.</p>
+    <div className={styles.VegAddDeletePage}>
+      <h1 className={styles.h1}>Add & Delete Vegetable.</h1>
       <p className={styles.p}>
-        A list of vegetables might be displayed. They will be cards, and there
-        will be a map.
+        User will be able to add and delete a vegetable on this page.
       </p>
     </div>
   );
 }
-export default PlotArchivePage;
 
 /* 
 // OLD PAGE HAD Check login BUTTON
