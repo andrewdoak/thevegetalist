@@ -1,5 +1,5 @@
 # Introduction
-The Vegetalist is an app that is designed as a helper for planning and tracking a [Square Foot Garden](https://squarefootgardening.org/). 
+The Vegetalist is an app that is designed as a helper for planning and tracking a [Square Foot Garden](https://squarefootgardening.org/). In square foot gardening, a plot is laid out in a grid, and plants are paired and spaced in order to encourage efficient vegetable production, beauty, and companion planting (plants that are symbiotic, so to speak). This is a complex endeavor. I built this app to simplify my life, and hopefully others' who would like to take up square foot gardening, or already do it.
 
 # Technologies
 - MERN Stack (MongoDB, Express, React, NodeJS)
